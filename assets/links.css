@@ -1,8 +1,9 @@
 /* links.html — หน้าลิงก์รวม · Brand Guide v1 (dark-first) */
 :root{
-  --bg:#0D1117;--surface:#161B22;--border:#2A313C;--text:#E6EDF3;--muted:#8B949E;
-  --accent:#A3E635;--accent-ink:#0D1117;--pop:#F472B6;--warn:#FBBF24;--error:#F87171;
-  --shadow:none;
+  --bg:#FFFFFF;--surface:#FAFAF7;--border:#E4E4DE;--text:#14171C;--muted:#5E6570;
+  --accent:#4D7C0F;--accent-ink:#FFFFFF;--pop:#DB2777;--warn:#B45309;--error:#DC2626;
+  --shadow:0 1px 2px rgb(0 0 0 / .06),0 4px 16px rgb(0 0 0 / .06);
+  color-scheme:light;
   /* ไอคอนโลโก้มืดตลอด, `_` เขียวนูบเสมอ */
   --ink-fixed:#0D1117;--on-ink-fixed:#E6EDF3;--accent-fixed:#A3E635;
   --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;
@@ -10,13 +11,6 @@
   --font:"IBM Plex Sans Thai",system-ui,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,monospace;
   --t:200ms ease-out;
-}
-@media (prefers-color-scheme:light){
-  :root{
-    --bg:#FAFAF7;--surface:#FFFFFF;--border:#E4E4DE;--text:#14171C;--muted:#5E6570;
-    --accent:#4D7C0F;--accent-ink:#FFFFFF;--pop:#DB2777;--warn:#B45309;--error:#DC2626;
-    --shadow:0 1px 2px rgb(0 0 0 / .06),0 4px 16px rgb(0 0 0 / .06);
-  }
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
