@@ -46,13 +46,22 @@
   }
 
   /* 2) ตัวละครกระโดด + บอลลูนคำพูด ตามนิสัยแต่ละคน */
-  var LINES = [
+  var EN = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
+  var LINES_EN = [
+    ['Wow, the spacing here is pixel-perfect!', 'Who changed this colour? Tell Mint!', 'How about a bubble tea?'],
+    ['Sure.', 'Coffee first.', 'Done.'],
+    ['Noob the cat, come model for me!', 'Want a meme with that?', 'This colour. Yes!'],
+    ['Let me check first.', "Kids, don't forget checklist item 3.", 'This one passes. Well done.'],
+    ['Free option first, lol', 'Paper first, okay?', 'Just do it!']
+  ];
+  var LINES_TH = [
     ['ว้าว ตรงนี้ระยะห่างเท่ากันเป๊ะเลยค่ะ!', 'สีนี้ใครแก้ บอกมินท์ด้วยนะคะ', 'ชานมสักแก้วไหมคะ'],
     ['ได้ครับ', 'กาแฟก่อน', 'เรียบร้อย'],
     ['นูบจ้า มาเป็นนายแบบหน่อย', 'ป๊อปทำมีมให้เอาไหม', 'สีนี้แหละ ใช่เลยจ้า'],
     ['ขอเช็กก่อนนะ', 'เด็กๆ อย่าลืม checklist ข้อ 3', 'งานนี้ผ่าน ครูชมนะ'],
     ['ขอแบบฟรีนะ 555', 'Paper ก่อนนะครับ', 'ทำเลย!']
   ];
+  var LINES = EN ? LINES_EN : LINES_TH;
   var crew = document.querySelectorAll('[data-sprite]');
   crew.forEach(function (el) {
     var k = +el.getAttribute('data-sprite'); var lines = LINES[k]; if (!lines) return;
@@ -69,7 +78,7 @@
     el.addEventListener('focus', place);
     if (el.tagName !== 'A') {           // หน้าทีม: การ์ดไม่ใช่ลิงก์ คลิกหรือกด Enter เพื่อคุย
       el.tabIndex = 0;
-      el.setAttribute('aria-label', (el.querySelector('h2') || el).textContent.trim() + ' — กดเพื่อคุย');
+      el.setAttribute('aria-label', (el.querySelector('h2') || el).textContent.trim() + (EN ? ' — press to talk' : ' — กดเพื่อคุย'));
       var talk = function () {
         say.textContent = lines[n++ % lines.length]; place();
         el.classList.add('fun-on'); clearTimeout(el._t);
@@ -141,7 +150,7 @@
       '<rect x="8" y="0" width="1" height="1" fill="#B45309"/><rect x="10" y="0" width="1" height="1" fill="#B45309"/>' +
       '<rect x="9" y="2" width="1" height="1" fill="#14171C"/><rect x="0" y="2" width="1" height="3" fill="#B45309"/>' +
       '<rect x="2" y="7" width="1" height="1" fill="#B45309"/><rect x="7" y="7" width="1" height="1" fill="#B45309"/></svg>' +
-      '<span class="msg">เมี๊ยว~ นูบมาแล้ว</span>';
+      '<span class="msg">' + (EN ? 'Meow~ Noob is here' : 'เมี๊ยว~ นูบมาแล้ว') + '</span>';
     document.body.appendChild(c);
     if (reduce) { c.style.left = '16px'; setTimeout(function () { c.remove(); }, 2500); return; }
     c.animate([{ left: '-120px' }, { left: (window.innerWidth + 40) + 'px' }], { duration: 6000, easing: 'linear' }).onfinish = function () { c.remove(); };

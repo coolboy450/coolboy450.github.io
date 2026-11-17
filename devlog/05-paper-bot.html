@@ -1,53 +1,55 @@
 <!doctype html>
-<html lang="th">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EP.05 บอทหุ้นโหมด Paper: บอทไม่ได้ "เก่งขึ้นเอง" — noob_dev devlog</title>
-<meta name="description" content="บอทหุ้นโหมด Paper ที่มีหน้า Monitor ระบบกันราคาผิดปกติ สอบกลยุทธ์รายสัปดาห์ และเบรกฉุกเฉิน พร้อมบทเรียนว่าต้องวัดผลก่อนคิดเรื่องเงินจริง">
+<title>EP.05 Paper-mode stock bot: it does not "get better by itself" — noob_dev devlog</title>
+<meta name="description" content="A Paper-mode stock bot with a monitor page, a price guard, a weekly strategy review and an emergency brake, plus the lesson that results must be measured before thinking about real money.">
 <meta name="color-scheme" content="dark light">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/05-paper-bot.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/05-paper-bot.html">
 </head>
 <body>
-<a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+<a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
   <header class="site">
-    <a class="logo" href="../index.html" aria-label="noob_dev หน้าแรก">noob<b>_</b>dev</a>
-    <nav aria-label="เมนูหลัก">
-      <a href="../index.html">หน้าแรก</a><a href="../projects/">ผลงาน</a><a href="./" aria-current="page">บันทึก</a><a href="../team.html">ทีม</a><a href="../hire.html">รับงาน</a>
-    </nav>
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav><a class="lang" href="../th/devlog/05-paper-bot.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
   </header>
 
   <main id="main">
     <article class="article">
       <div class="ph">
         <span class="no">EP.05</span>
-        <div class="prog" role="img" aria-label="ตอนที่ 5 จาก 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
-        <h1>บอทหุ้นโหมด Paper: บอทไม่ได้ "เก่งขึ้นเอง"</h1>
-        <div class="meta"><time datetime="2026-11-14">14 พ.ย. 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">บอทหุ้น</li><li class="tag">เทรดจำลอง</li><li class="tag">บทเรียน</li></ul></div>
+        <div class="prog" role="img" aria-label="Episode 5 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        <h1>Paper-mode stock bot: it does not "get better by itself"</h1>
+        <div class="meta"><time datetime="2026-11-14">Nov 14, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">stock-bot</li><li class="tag">paper-trading</li><li class="tag">lesson</li></ul></div>
       </div>
-      <p class="note">เพื่อการศึกษา ไม่ใช่คำแนะนำการลงทุน</p>
+      <p class="note">For learning only. Not investment advice.</p>
       <div class="prose">
-        <p>รอบนี้แบงก์รับงานบอทหุ้นเต็มตัว แต่เราตั้งกฎไว้ตั้งแต่ต้นว่าต้องอยู่ในโหมด Paper คือเทรดด้วยเงินสมมติ ไม่มีเงินจริงเข้ามาเกี่ยวข้อง จุดประสงค์คือฝึกเขียนระบบและเรียนรู้ ไม่ใช่หาเงิน เราจึงไม่มีและไม่อ้างตัวเลขผลตอบแทนใดๆ ทั้งสิ้น</p>
-        <p>สิ่งที่เพิ่มเข้าไปมี 4 อย่าง อย่างแรกคือหน้า Monitor ไว้ดูสถานะของบอทว่าตอนนี้ทำอะไรอยู่ จะได้ไม่ต้องเดาจากข้อความในแชท อย่างที่สองคือระบบกันราคาผิดปกติ ถ้าข้อมูลราคาที่เข้ามาดูหลุดกรอบหรือแปลกเกินไป บอทต้องไม่เอาไปตัดสินใจ เพราะข้อมูลเสียหนึ่งตัวก็พาให้ทั้งระบบเข้าใจผิดได้</p>
-        <p>อย่างที่สามคือการสอบกลยุทธ์รายสัปดาห์ ทุกสัปดาห์กลยุทธ์ที่ใช้อยู่ต้องถูกทบทวนว่ายังใช้ได้ไหม ไม่ใช่ปล่อยรันต่อไปเรื่อยๆ เพราะมันเคยใช้ได้ และอย่างที่สี่คือเบรกฉุกเฉิน ถ้าพอร์ตจำลองลดลงถึง 10% บอทจะหยุดเปิดการซื้อใหม่เองทันที (ยังขายหรือตัดขาดทุนได้ตามปกติ) เผื่อวันที่มีอะไรหลุดมือ</p>
-        <p>บทเรียนใหญ่ของตอนนี้ คือบอทไม่ได้ "เก่งขึ้นเอง" แค่เพราะรันมานานขึ้น ความรู้สึกที่ว่า "ปล่อยไว้นานๆ เดี๋ยวมันก็ดีขึ้นเอง" เป็นกับดักที่เจอง่าย แต่จริงๆ แล้วระบบไม่ได้เรียนรู้อะไรถ้าเราไม่ได้ออกแบบให้เรียน และถึงจะรันนาน ถ้าไม่ได้วัดผลอย่างเป็นระบบ เราก็บอกไม่ได้ว่ามันดีขึ้น แย่ลง หรือแค่โชคดีโชคร้ายตามช่วงตลาด</p>
-        <p>เพราะอย่างนี้ลำดับที่ถูกคือ วัดผลให้ชัดก่อน ตั้งเกณฑ์ว่าอะไรคือดี อะไรคือไม่ผ่าน แล้วค่อยมาคิดเรื่องเงินจริง ซึ่งตอนนี้เรายังไม่ได้คิดเลย และยังไม่มีแผนจะข้ามไปถึงขั้นนั้น</p>
-        <p>นี่คือตอนสุดท้ายของซีซัน 1 ถ้าอยากดูสิ่งที่ทำมาทั้งหมด ไปที่หน้าโปรเจกต์ได้เลย</p>
+        <p>This time Bank took the stock bot on fully, but we set a rule from the start: it must stay in Paper mode. It trades with pretend money, and no real money is involved. The goal is to practise building systems and to learn, not to make money, so we don't have, and don't claim, any return figures at all.</p>
+        <p>Four things were added. First, a Monitor page to show what the bot is doing right now, so I don't have to guess from chat messages. Second, a price guard: if an incoming price looks out of range or too strange, the bot must not use it to make a decision, because one bad data point can mislead the whole system.</p>
+        <p>Third, a weekly strategy review. Every week the strategy in use has to be re-examined to see whether it still works, rather than being left to run just because it once did. Fourth, an emergency brake: if the paper portfolio falls by 10%, the bot immediately stops opening new buys by itself (it can still sell or cut losses as normal), in case something slips out of hand.</p>
+        <p>The big lesson of this episode: the bot does not "get better by itself" just because it has been running longer. The feeling that "if I leave it long enough it will improve on its own" is an easy trap. In truth a system learns nothing unless we design it to learn, and even if it runs for a long time, without systematic measurement we can't tell whether it is getting better, getting worse, or just lucky or unlucky with the market.</p>
+        <p>That is why the right order is: measure clearly first, set criteria for what counts as good and what counts as failing, and only then think about real money. We haven't thought about that yet, and have no plan to cross that line.</p>
+        <p>This is the last episode of season 1. To see everything we've built, head to the projects page.</p>
       </div>
-      <nav class="pn" aria-label="ตอนอื่น">
-        <a class="card" href="04-move-to-cloud.html"><small>← EP.04</small>ย้ายสตูดิโอขึ้นคลาวด์ แล้วรับแบงก์เข้าทีม</a>
-        <div class="card"><small>EP.06 →</small>ยังไม่มีตอนถัดไป</div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="04-move-to-cloud.html"><small>← EP.04</small>Moving the studio to the cloud and hiring Bank</a>
+        <div class="card"><small>EP.06 →</small>No next episode yet</div>
       </nav>
     </article>
   </main>
 </div>
-<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">ลิงก์รวม</a></div></footer>
-<!-- TODO: ลิงก์ Discord -->
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
 <script src="../assets/fun.js" defer></script>
 </body>
 </html>

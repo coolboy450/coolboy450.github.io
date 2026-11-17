@@ -35,3 +35,9 @@ a{color:inherit}
 .arr{font-family:var(--mono);flex:0 0 auto}
 .links a:not(.main) .arr{color:var(--muted)}
 .safe{margin-top:var(--s5);font:400 12px/1.7 var(--mono);color:var(--muted);text-align:center}
+
+/* language switch (EN / ไทย) */
+.lang{min-height:44px;min-width:44px;display:inline-flex;align-items:center;justify-content:center;padding:0 var(--s3);border:1px solid var(--border);border-radius:var(--r-pill);background:var(--surface);color:var(--text);text-decoration:none;font:600 14px/1.7 var(--font-mono);transition:border-color var(--ease)}
+.lang:hover{border-color:var(--accent)}
+.lang-row{text-align:center;margin-top:var(--s4)}
+@media (prefers-reduced-motion:reduce){.lang{transition:none}}

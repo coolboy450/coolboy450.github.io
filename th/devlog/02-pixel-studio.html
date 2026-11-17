@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.02 สร้างสตูดิโอออฟฟิศพิกเซล ไม่ต้องมี API key — noob_dev devlog</title>
+<meta name="description" content="สตูดิโอออฟฟิศพิกเซลที่ไหลงานจากสั่ง แบบร่าง เลือก ทำ ตรวจ ไปจนอนุมัติ โดยใช้ Claude Code CLI">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/02-pixel-studio.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/02-pixel-studio.html">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev หน้าแรก">noob<b>_</b>dev</a>
+    <nav aria-label="เมนูหลัก">
+      <a href="../index.html">หน้าแรก</a><a href="../projects/">ผลงาน</a><a href="./" aria-current="page">บันทึก</a><a href="../team.html">ทีม</a><a href="../hire.html">รับงาน</a>
+    </nav><a class="lang" href="../../devlog/02-pixel-studio.html" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.02</span>
+        <div class="prog" role="img" aria-label="ตอนที่ 2 จาก 5"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+        <h1>สร้างสตูดิโอออฟฟิศพิกเซล ไม่ต้องมี API key</h1>
+        <div class="meta"><time datetime="2026-11-13">13 พ.ย. 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">พิกเซลอาร์ต</li><li class="tag">Claude Code</li><li class="tag">ขั้นตอนงาน</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>พอมีทีมกับคู่มือแบรนด์แล้ว ปัญหาถัดมาคือจะให้ทีมทำงานกันยังไง การเปิดแชทคุยทีละคนมันไม่เหมือนการมีออฟฟิศ เราเลยตัดสินใจสร้างสตูดิโอขึ้นมาเอง หน้าตาเป็นออฟฟิศพิกเซล มีตัวละครนั่งอยู่ในห้อง เห็นว่าใครกำลังทำอะไร</p>
+        <p>หัวใจของสตูดิโอคือสายงานที่ชัดเจน เริ่มจาก "สั่งงาน" ที่เรา เป็นเจ้าของพิมพ์ไว้ จากนั้นทีมทำ "แบบร่าง" ให้เราดูหลายแบบ แล้วเรา "เลือก" แบบที่ชอบ ต่อด้วยขั้น "ทำ" ที่ลงมือเขียนจริง ผ่านด่าน "ตรวจ" โดยผู้ตรวจตามเช็กลิสต์ และจบที่ "อนุมัติ" ซึ่งเป็นการตัดสินใจของเราคนเดียว ไม่มีอะไรหลุดไปเผยแพร่โดยที่เราไม่รู้</p>
+        <p>ส่วนที่เราภูมิใจเป็นพิเศษคือ สตูดิโอนี้ใช้ Claude Code CLI ที่ติดตั้งไว้ในเครื่อง ไม่ต้องมี API key ไม่ต้องไปผูกบัตรหรือจัดการคีย์ให้ยุ่งยาก สำหรับโปรเจกต์ส่วนตัวที่ยังอยากคุมค่าใช้จ่ายให้ต่ำ ข้อนี้ช่วยได้เยอะ และยังลดความเสี่ยงที่คีย์จะหลุดไปอยู่ในโค้ดโดยไม่ตั้งใจอีกด้วย</p>
+        <p>การออกแบบที่ได้ผลเกินคาดคือ "แบบร่างก่อนทำจริง" เมื่อก่อนเรามักสั่งให้ลงมือทำเลยแล้วค่อยมาบอกว่าไม่ใช่แนวนี้ ตอนนี้ทีมต้องวางทางเลือกให้ดูก่อน เราแค่ชี้ว่าเอาแบบไหน ช่วยประหยัดทั้งเวลาและความหงุดหงิด เว็บหลักที่คุณกำลังดูอยู่นี้ก็มาจากสายงานแบบนี้เหมือนกัน</p>
+        <p>ตอนนั้นสตูดิโอยังรันอยู่บนเครื่องของเราเอง เมื่อเทียบกับการทำทุกอย่างคนเดียว การมีสายงานที่เห็นทุกขั้นก็ช่วยให้ตามงานได้ง่ายกว่ามาก รู้ตลอดว่างานอยู่ตรงไหน และรอใครอยู่</p>
+        <p>ตอนต่อไปจะเล่าถึงด้านที่ไม่ได้อยู่ในแผนเลย คือการให้ทีมมีชื่อ มีนิสัย และงอนกันได้จริงๆ</p>
+      </div>
+      <nav class="pn" aria-label="ตอนอื่น">
+        <a class="card" href="01-grill-me.html"><small>← EP.01</small>ให้ AI ถามเราทีละข้อ จนได้ทีมและคู่มือแบรนด์</a>
+        <a class="card" href="03-team-drama.html"><small>EP.03 →</small>ทีมที่งอนกันได้ เพราะเซิร์ฟเวอร์เป็นคนกำหนด</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">ลิงก์รวม</a></div></footer>
+<!-- TODO: ลิงก์ Discord -->
+<script src="../../assets/fun.js" defer></script>
+</body>
+</html>

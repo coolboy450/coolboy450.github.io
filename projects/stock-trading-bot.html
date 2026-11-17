@@ -1,60 +1,62 @@
 <!doctype html>
-<html lang="th">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stock Trading Bot — noob_dev</title>
-<meta name="description" content="บอทเทรดหุ้นแบบ Paper เท่านั้น เพื่อการศึกษา ไม่ใช่คำแนะนำการลงทุน">
+<meta name="description" content="A Paper-only stock trading bot, for learning. Not investment advice.">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/projects/stock-trading-bot.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/projects/stock-trading-bot.html">
 </head>
 <body>
-<a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+<a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
   <header class="site">
-    <a class="logo" href="../index.html" aria-label="noob_dev หน้าแรก">noob<b>_</b>dev</a>
-    <nav aria-label="เมนูหลัก">
-      <a href="../index.html">หน้าแรก</a><a href="./" aria-current="page">ผลงาน</a><a href="../devlog/">บันทึก</a><a href="../team.html">ทีม</a><a href="../hire.html">รับงาน</a>
-    </nav>
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="./" aria-current="page">projects</a><a href="../devlog/">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav><a class="lang" href="../th/projects/stock-trading-bot.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
   </header>
 
   <main id="main">
     <div class="page-head">
       <a class="back" href="../index.html">← cd ..</a>
-      <p class="prompt"><i>$</i> เปิดผลงานบอทหุ้น</p>
-      <h1>บอทเทรดหุ้น</h1>
-      <p class="lead">บอทเทรดหุ้นแบบ Paper เท่านั้น ไม่ใช้เงินจริง</p>
+      <p class="prompt"><i>$</i> cat ./stock-trading-bot</p>
+      <h1>Stock Trading Bot</h1>
+      <p class="lead">Paper mode only, no real money</p>
     </div>
 
     <div class="proj">
       <article class="card">
         <section aria-labelledby="what">
-          <h2 id="what">ทำอะไร</h2>
-          <p>บอทที่จำลองการซื้อขายหุ้นในพอร์ตกระดาษ (Paper) เพื่อฝึกเขียนระบบและทดลองกลยุทธ์ มีตัว หน้าติดตามสถานะ (Monitor) คอยดูสถานะ และ ระบบกันราคาผิดปกติคอยกันราคาที่ผิดปกติ</p>
-          <p class="note">เพื่อการศึกษา ไม่ใช่คำแนะนำการลงทุน</p>
+          <h2 id="what">What it does</h2>
+          <p>A bot that simulates buying and selling stocks in a paper portfolio, to practise writing systems and test strategies. It has a monitor page that shows what the bot is doing, and a price guard that blocks abnormal prices.</p>
+          <p class="note">For learning only. Not investment advice.</p>
         </section>
         <section aria-labelledby="tech">
-          <h2 id="tech">เทคที่ใช้</h2>
-          <ul class="tags"><li class="tag">Python</li><li class="tag">เทรดจำลอง</li><li class="tag">Discord</li></ul>
+          <h2 id="tech">Tech</h2>
+          <ul class="tags"><li class="tag">Python</li><li class="tag">paper-trading</li><li class="tag">Discord</li></ul>
         </section>
         <section aria-labelledby="hl">
-          <h2 id="hl">ไฮไลต์</h2>
+          <h2 id="hl">Highlights</h2>
           <ul class="hl">
-            <li>หน้าติดตามสถานะ (Monitor) คอยดูสถานะของบอทตลอด</li>
-            <li>ระบบกันราคาผิดปกติกันราคาที่หลุดกรอบก่อนส่งคำสั่ง</li>
-            <li>สอบกลยุทธ์รายสัปดาห์ ว่ายังใช้ได้ไหม</li>
+            <li>A monitor page that shows what the bot is doing at all times</li>
+            <li>A price guard that blocks out-of-range prices before any order</li>
+            <li>A weekly strategy review: is the current one still working?</li>
           </ul>
         </section>
       </article>
-      <div class="shot" role="img" aria-label="ช่องใส่ภาพหน้าจอ Stock Trading Bot (ยังไม่มีภาพ)">ภาพหน้าจอเร็วๆ นี้<br>1600 × 1000</div>
+      <div class="shot" role="img" aria-label="Screenshot placeholder for Stock Trading Bot (no image yet)">Screenshot coming soon<br>1600 × 1000</div>
     </div>
-    <div class="pager"><a class="back" href="../team.html">ดูทีม →</a></div>
+    <div class="pager"><a class="back" href="../team.html">Meet the team →</a></div>
   </main>
 </div>
-<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><!-- TODO: ลิงก์ Discord --></div></footer>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><!-- TODO: add the Discord invite link when the owner provides one --></div></footer>
 <script src="../assets/fun.js" defer></script>
 </body>
 </html>
