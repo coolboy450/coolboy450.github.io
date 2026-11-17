@@ -170,7 +170,7 @@ footer a:hover{color:var(--text)}
 .contact div{display:grid;grid-template-columns:80px 1fr;gap:var(--s3);align-items:center;min-height:44px;border-top:1px solid var(--border);padding-top:var(--s2)}
 .contact dt{font:400 14px/1.7 var(--font-mono);color:var(--muted)}
 .contact dd{margin:0}
-.contact dd a{display:inline-flex;align-items:center;min-height:44px;font:400 14px/1.7 var(--font-mono)}
+.contact dd a{overflow-wrap:anywhere;display:inline-flex;align-items:center;min-height:44px;font:400 14px/1.7 var(--font-mono)}
 .tag.todo{color:var(--warn);border-color:var(--warn)}
 .card .prompt{margin-bottom:var(--s2)}
 .card h2.prompt{font-size:14px;line-height:1.3;letter-spacing:0}
