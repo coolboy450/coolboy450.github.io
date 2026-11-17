@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.06 ทีมบอกว่าเสร็จแล้ว แต่ผมหาหน้าไม่เจอ — noob_dev devlog</title>
+<meta name="description" content="หน้า Monitor ของบอทหุ้นผ่านการอนุมัติแต่เปิดแล้วเจอ 404 และการลองรันของจริงเผยบั๊ก 3 ตัวที่ผู้ตรวจมองไม่เห็น">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/06-where-is-my-page.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/06-where-is-my-page.html">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev หน้าแรก">noob<b>_</b>dev</a>
+    <nav aria-label="เมนูหลัก">
+      <a href="../index.html">หน้าแรก</a><a href="../projects/">ผลงาน</a><a href="./" aria-current="page">บันทึก</a><a href="../team.html">ทีม</a><a href="../hire.html">รับงาน</a>
+    </nav><a class="lang" href="../../devlog/06-where-is-my-page.html" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.06</span>
+        <div class="prog" role="img" aria-label="ตอนที่ 6 จาก 12"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h1>ทีมบอกว่าเสร็จแล้ว แต่ผมหาหน้าไม่เจอ</h1>
+        <div class="meta"><time datetime="2026-11-14">14 พ.ย. 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">บอทหุ้น</li><li class="tag">หาบั๊ก</li><li class="tag">บทเรียน</li></ul></div>
+      </div>
+      <p class="note">เพื่อการศึกษา ไม่ใช่คำแนะนำการลงทุน</p>
+      <div class="prose">
+        <p>ทีมทำหน้า /monitor กับระบบกันราคาผิดปกติของบอทหุ้นเสร็จ ผู้ตรวจให้ผ่าน และผมก็กดอนุมัติในสตูดิโอ พอเปิดลิงก์ขึ้นมา กลับเจอหน้า 404 หน้าที่ทีมสร้างไว้ไม่มีอยู่จริง</p>
+        <p>สาเหตุธรรมดาจนน่าเบื่อ คือ Dashboard ของบอทยังรันโค้ดเก่าที่เปิดไว้ตั้งแต่ก่อนทีมเริ่มงาน ไฟล์บนดิสก์เปลี่ยนแล้ว แต่โปรแกรมที่กำลังรันอยู่ไม่ได้ถูกรีสตาร์ต มันจึงไม่รู้จักหน้าใหม่เลย รีสตาร์ตครั้งเดียว หน้าก็โผล่มา</p>
+        <p>เรื่องนี้ทำให้เราไม่เชื่อแค่คำว่า "ผ่าน" แล้วลองรันของจริง ก็เจอบั๊ก 3 ตัวที่ผู้ตรวจไม่เห็น ช่อง log ว่างเปล่าตลอด เพราะโค้ดอ่านระดับของ log ผิดวิธี ไม่มีบรรทัดไหนไปถึงหน้าเว็บเลย ป้ายเหลือง "ข้อมูลค้าง" ขึ้นตั้งแต่ 15 วินาที ทั้งที่บอทส่งสัญญาณว่ายังทำงานอยู่ทุก 30 วินาที และตัวที่แย่ที่สุด คือมีโปรแกรมสองตัว ได้แก่ตัวตั้งเวลาของบอทและปุ่ม "รันรอบนี้เลย" ของ Dashboard ต่างก็เก็บไฟล์สถานะของตัวเอง ทุก 30 วินาทีตัวตั้งเวลาจะเขียนข้อมูลเก่าทับรอบที่เพิ่งรันเสร็จ ผลที่เพิ่งได้จึงหายไป</p>
+        <p>แต่ละตัวถูกแก้ พร้อมเทสที่จะล้มทันทีถ้าบั๊กนั้นกลับมา (ชุดเทสโตจาก 70 เป็น 112 ข้อระหว่างทาง) จากนั้นผมกดปุ่มเอง รอบที่รันขึ้นมา และยังอยู่ครบหลังผ่านไป 40 วินาที ซึ่งตัวตั้งเวลาเขียนไฟล์ไปแล้วอีกรอบ</p>
+        <p>บทเรียน: คำว่า "เสร็จ" จากทีม AI แปลว่าเขียนโค้ดแล้วและผ่านเช็กลิสต์ ไม่ได้แปลว่าของกำลังรันอยู่ หรือทำงานถูกเมื่อสองส่วนแตะไฟล์เดียวกัน ให้เปิดหน้าจริง กดปุ่มจริง และรอให้งานเบื้องหลังทำงานสักรอบ</p>
+        <p>บอทนี้ยังเป็นโหมด Paper อย่างเดียว ทั้งหมดนี้ไม่เกี่ยวกับเงินจริง ตอนต่อไปเล่าว่าเอาหน้านี้เข้ามาไว้ในสตูดิโอ จะได้เปิดที่เดียวแทนสองที่</p>
+      </div>
+      <nav class="pn" aria-label="ตอนอื่น">
+        <a class="card" href="05-paper-bot.html"><small>← EP.05</small>บอทหุ้นโหมด Paper: บอทไม่ได้ "เก่งขึ้นเอง"</a>
+        <a class="card" href="07-monitor-in-the-studio.html"><small>EP.07 →</small>เอาหน้าติดตามบอทมาไว้ในสตูดิโอ</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">ลิงก์รวม</a></div></footer>
+<!-- TODO: ลิงก์ Discord -->
+<script src="../../assets/fun.js" defer></script>
+</body>
+</html>

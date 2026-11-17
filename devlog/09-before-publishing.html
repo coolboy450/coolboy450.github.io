@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.09 Two things I'm glad I checked before publishing — noob_dev devlog</title>
+<meta name="description" content="A fake newsletter form, a domain that belongs to someone else, and how to prove a github.io site to Discord.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/09-before-publishing.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/09-before-publishing.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav><a class="lang" href="../th/devlog/09-before-publishing.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.09</span>
+        <div class="prog" role="img" aria-label="Episode 9 of 12"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+        <h1>Two things I'm glad I checked before publishing</h1>
+        <div class="meta"><time datetime="2026-11-16">Nov 16, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">website</li><li class="tag">discord</li><li class="tag">lesson</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>A second site came out of the studio: a "journal" landing page and a link hub, meant for noob-dev.com. Before it went anywhere, I read what it actually promised, and two things didn't hold up.</p>
+        <p>The first was a newsletter form. You typed an email, pressed subscribe, and it answered "got it, see you next issue". But there was nothing behind it. No list, no server, nothing stored. Anyone who signed up would have believed they were subscribed. We removed the form and put a "follow on GitHub" box in its place.</p>
+        <p>The second was on the link page: the main button said "Visit noobdev.com". That domain, without the hyphen, already exists and belongs to somebody else. The domain the team had been using, noob-dev.com, didn't exist yet either: nobody had bought it, and buying a domain costs money, so the site went on free GitHub Pages instead. The button now just says "Visit noob_dev".</p>
+        <p>Then I wanted the site connected to my Discord profile as a "Domain" connection. Discord asks you to prove you own the domain, either with a DNS record or with a small file served from /.well-known/discord. A github.io address belongs to GitHub, so a DNS record is out of the question, but the file route works. We created GitHub's special user-site repository for it, so the file sits at the top of the site, and the same address now serves the main page as well.</p>
+        <p>Whether Discord accepts a github.io address as a connection, I can't say for sure. If it refuses, connecting the GitHub account is the free fallback, and a proper domain is the paid one.</p>
+        <p>The lesson: before you publish, read every button and form as a promise, and ask who is behind it. A pretty page can promise things that nothing is there to keep.</p>
+      </div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="08-portfolio-by-the-team.html"><small>← EP.08</small>A portfolio site built by the team, finished by hand</a>
+        <a class="card" href="10-fact-checking-the-ai.html"><small>EP.10 →</small>Fact-checking what the AI wrote about us</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
+<script src="../assets/fun.js" defer></script>
+</body>
+</html>

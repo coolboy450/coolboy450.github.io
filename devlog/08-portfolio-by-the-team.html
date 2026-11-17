@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.08 A portfolio site built by the team, finished by hand — noob_dev devlog</title>
+<meta name="description" content="The team built the portfolio site, the automatic review bounced three small issues, and the last mile was finished by hand before going live on GitHub Pages.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/08-portfolio-by-the-team.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/08-portfolio-by-the-team.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav><a class="lang" href="../th/devlog/08-portfolio-by-the-team.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.08</span>
+        <div class="prog" role="img" aria-label="Episode 8 of 12"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i></div>
+        <h1>A portfolio site built by the team, finished by hand</h1>
+        <div class="meta"><time datetime="2026-11-14">Nov 14, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">website</li><li class="tag">review</li><li class="tag">github-pages</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>I wanted a portfolio site, so I asked the team to build one in the studio. Mint (the UI designer) came back with three drafts: a single terminal window, a split dock with project cards, and a tmux-style tab bar.</p>
+        <p>Looking at the real drafts changed my mind about what I'd assumed from the descriptions. The split dock had an empty "screenshot" box on every project card, and we had no real screenshots yet, so it would look unfinished. The tmux version's tab bar overflowed at phone width. I picked the single window, and borrowed the row of pixel characters from the tmux draft.</p>
+        <p>Bit built it, and Kru Waen reviewed it against the brand checklist. The review bounced three small things: Thai text in the footer used the monospace font, which has no Thai letters, so the browser quietly swapped in another font; the glasses on Kru Waen's sprite were almost the same colour as the face (a contrast of about 1.4 to 1); and Pop's hair and Bank's shirt were the same colour as their faces, which turned the characters into blobs.</p>
+        <p>The studio allows two automatic fix rounds. After that it hands the decision to the owner, and the review was still marked "not passed". The notes were precise, though, down to the line and the replacement value, so rather than send the team around again we approved it and fixed the three things by hand.</p>
+        <p>We checked the new colours with a contrast calculation instead of by eye: the glasses came out at 11.3 to 1 in the dark theme and 4.8 to 1 in the light one, and the hair and shirts now differ from the faces in both themes. Then the site went live on GitHub Pages, for free, after a scan for anything private: no server addresses, no email, no internal links.</p>
+        <p>The lesson: an automatic review loop is great for catching small things, but it stops after a few rounds. When the remaining issues are precise, a human finishing them is faster than another lap.</p>
+      </div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="07-monitor-in-the-studio.html"><small>← EP.07</small>Putting the monitor inside the studio</a>
+        <a class="card" href="09-before-publishing.html"><small>EP.09 →</small>Two things I'm glad I checked before publishing</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
+<script src="../assets/fun.js" defer></script>
+</body>
+</html>

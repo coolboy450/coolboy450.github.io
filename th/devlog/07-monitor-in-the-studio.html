@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.07 เอาหน้าติดตามบอทมาไว้ในสตูดิโอ — noob_dev devlog</title>
+<meta name="description" content="การฝังหน้า Monitor ของบอทในสตูดิโอพังเพราะเบราว์เซอร์บล็อกกรอบจากคนละพอร์ต แก้ได้ด้วยการส่งต่อผ่านสตูดิโอ">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/07-monitor-in-the-studio.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/07-monitor-in-the-studio.html">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev หน้าแรก">noob<b>_</b>dev</a>
+    <nav aria-label="เมนูหลัก">
+      <a href="../index.html">หน้าแรก</a><a href="../projects/">ผลงาน</a><a href="./" aria-current="page">บันทึก</a><a href="../team.html">ทีม</a><a href="../hire.html">รับงาน</a>
+    </nav><a class="lang" href="../../devlog/07-monitor-in-the-studio.html" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.07</span>
+        <div class="prog" role="img" aria-label="ตอนที่ 7 จาก 12"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h1>เอาหน้าติดตามบอทมาไว้ในสตูดิโอ</h1>
+        <div class="meta"><time datetime="2026-11-14">14 พ.ย. 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">สตูดิโอ</li><li class="tag">พร็อกซี</li><li class="tag">บทเรียน</li></ul></div>
+      </div>
+      <p class="note">เพื่อการศึกษา ไม่ใช่คำแนะนำการลงทุน</p>
+      <div class="prose">
+        <p>พอหน้า Monitor ใช้ได้แล้ว เหลือความรำคาญเล็กๆ ข้อเดียว คือมันอยู่ที่ที่อยู่ของตัวเอง ผมต้องจำลิงก์สองอัน เลยอยากเอามาไว้ในสตูดิโอ เป็นแท็บข้างๆ ออฟฟิศ</p>
+        <p>ความพยายามแรกคือวิธีที่ใครๆ ก็ทำ ทำแท็บที่ฝังหน้า /monitor ของ Dashboard ในกรอบ ดึงตรงจากพอร์ตของมันเอง ผลคือกล่องสีขาวว่างเปล่า คอนโซลของเบราว์เซอร์บอกเหตุผล กรอบนั้นมาจากคนละพอร์ตกับสตูดิโอ เบราว์เซอร์จึงบล็อก</p>
+        <p>ทางแก้คือเลิกให้เบราว์เซอร์ข้ามเส้นนั้น เซิร์ฟเวอร์ของสตูดิโอเองส่งต่อ 3 เส้นทาง คือหน้า Monitor ข้อมูลของมัน และไอคอน ไปที่ Dashboard ของบอท ในสายตาของเบราว์เซอร์ทุกอย่างจึงมาจากที่เดียวกัน ก่อนเปิดใช้ ผมเช็กแล้วว่าทั้งสามเส้นทางไม่ชนกับหน้าของสตูดิโอเอง</p>
+        <p>ผลลัพธ์คือแท็บที่สองบนหัวหน้า "บอทหุ้น" ข้างแท็บ "ออฟฟิศ" มันจำว่าครั้งก่อนเปิดแท็บไหน และมีลิงก์ "เปิดในแท็บใหม่" ถ้าอยากได้เต็มจอ ปุ่ม "รันรอบนี้เลย" ก็กดได้จากในกรอบ การเข้าถึงไม่เปลี่ยน ทุกอย่างยังอยู่หลังเครือข่ายส่วนตัว และ Dashboard ของบอทเองก็ไม่ได้เปิดสู่อินเทอร์เน็ต</p>
+        <p>บทเรียนเล็กๆ แต่ใช้ได้เสมอ: ถ้าอะไรเปิดตรงๆ ได้แต่พังเมื่ออยู่ในกรอบ ให้ดูก่อนว่าเนื้อหาในกรอบมาจากไหน ก่อนจะโทษหน้านั้น</p>
+        <p>ต่อไป: เว็บพอร์ตโฟลิโอ และเรื่องที่เกิดขึ้นตอนสั่งทีมให้สร้าง</p>
+      </div>
+      <nav class="pn" aria-label="ตอนอื่น">
+        <a class="card" href="06-where-is-my-page.html"><small>← EP.06</small>ทีมบอกว่าเสร็จแล้ว แต่ผมหาหน้าไม่เจอ</a>
+        <a class="card" href="08-portfolio-by-the-team.html"><small>EP.08 →</small>เว็บพอร์ตโฟลิโอที่ทีมสร้าง และเราเป็นคนปิดงาน</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">ลิงก์รวม</a></div></footer>
+<!-- TODO: ลิงก์ Discord -->
+<script src="../../assets/fun.js" defer></script>
+</body>
+</html>

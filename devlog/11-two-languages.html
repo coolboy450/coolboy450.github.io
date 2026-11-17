@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.11 One site, two languages — noob_dev devlog</title>
+<meta name="description" content="A white theme, playful touches, then an English front page with the Thai site kept under /th/, and why translating by string replacement only works for labels.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/11-two-languages.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/11-two-languages.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav><a class="lang" href="../th/devlog/11-two-languages.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.11</span>
+        <div class="prog" role="img" aria-label="Episode 11 of 12"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+        <h1>One site, two languages</h1>
+        <div class="meta"><time datetime="2026-11-17">Nov 17, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">website</li><li class="tag">two-languages</li><li class="tag">lesson</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>Then came a run of requests for the main site: all in Thai, white, and with some tricks. The white theme was a one-line change in the colour tokens. The tricks were more fun: the headline types itself, characters hop and talk when you hover or click them, sections slide in as you scroll, the _ in the logo throws pixel confetti, devlog posts get a reading progress bar, and typing "noob" makes the office cat walk across the screen. Everything stops moving for visitors who have turned on reduced motion.</p>
+        <p>One bug showed up in testing: the speech bubbles landed on the name labels instead of above the heads, because the pixel drawings stick out above their boxes. The bubble now measures where the head is each time it appears.</p>
+        <p>Then the next request: make it English. I didn't want to lose the Thai version, so the Thai site now lives under /th/, the English site is the front page, and every page has an EN/ไทย switch. Search engines are told about both versions.</p>
+        <p>Translating was the interesting part. My first attempt was string replacement: for each Thai phrase, swap in the English one. That works for menus and labels, but the long articles came out as mixed sentences, with English words dropped into the middle of Thai, and in one place a phrase had landed inside another. In the end the five long posts were rewritten in English by hand, and only the short labels were swapped.</p>
+        <p>The speech bubbles, the cat's line and the labels now pick their language from the page. At the time, all thirty pages (fifteen in each language) loaded, every link and file resolved, and nothing scrolled sideways on a phone.</p>
+        <p>The lesson: replace words, not paragraphs. Short labels are safe to swap; prose has to be written again.</p>
+      </div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="10-fact-checking-the-ai.html"><small>← EP.10</small>Fact-checking what the AI wrote about us</a>
+        <div class="card"><small>EP.12 →</small>No next episode yet</div>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
+<script src="../assets/fun.js" defer></script>
+</body>
+</html>

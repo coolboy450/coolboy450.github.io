@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.06 The team said it was done, but I couldn't find the page — noob_dev devlog</title>
+<meta name="description" content="The stock bot monitor page was approved but returned a 404, and running the real thing exposed three bugs the review had missed.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/06-where-is-my-page.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/06-where-is-my-page.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav><a class="lang" href="../th/devlog/06-where-is-my-page.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.06</span>
+        <div class="prog" role="img" aria-label="Episode 6 of 12"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h1>The team said it was done, but I couldn't find the page</h1>
+        <div class="meta"><time datetime="2026-11-14">Nov 14, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">stock-bot</li><li class="tag">debugging</li><li class="tag">lesson</li></ul></div>
+      </div>
+      <p class="note">For learning only. Not investment advice.</p>
+      <div class="prose">
+        <p>The team had finished the /monitor page and the price guard for the stock bot, the review said pass, and I approved it in the studio. Then I opened the link and got a 404. The page the team had built simply wasn't there.</p>
+        <p>The reason was almost boring: the bot's dashboard was still running the old code it had started with, long before the team began working. The files on disk had changed, but the running program hadn't been restarted, so it knew nothing about the new page. One restart later, the page appeared.</p>
+        <p>That made me check the work properly instead of just trusting the pass. I ran the real thing and found three bugs the review had not caught. The log panel stayed empty, because the code read the log level the wrong way and no log line ever reached the page. A yellow "data is stale" warning kept appearing after 15 seconds, even though the bot only sends its "still alive" signal every 30. And the worst one: two separate programs, the scheduler and the dashboard's "run now" button, each kept their own copy of the status file. Every 30 seconds the scheduler wrote its older copy over a round that "run now" had just finished, so the result vanished.</p>
+        <p>Each bug got a fix and a test that fails if the bug comes back (the test suite grew from 70 to 112 tests along the way). Then I pressed the button myself: the round showed up, and it was still there forty seconds later, after the scheduler had written again.</p>
+        <p>The lesson: "done" from a team of AIs means the code has been written and a checklist has passed. It does not mean the thing is running, or that it behaves when two parts touch the same file. Open the real page, press the real button, and wait long enough for the background jobs to fire.</p>
+        <p>This bot is still Paper mode only, so none of this involves real money. The next episode is about getting this page into the studio, so there is one place to open instead of two.</p>
+      </div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="05-paper-bot.html"><small>← EP.05</small>Paper-mode stock bot: it does not "get better by itself"</a>
+        <a class="card" href="07-monitor-in-the-studio.html"><small>EP.07 →</small>Putting the monitor inside the studio</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
+<script src="../assets/fun.js" defer></script>
+</body>
+</html>
