@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.03 ทีมที่งอนกันได้ เพราะเซิร์ฟเวอร์เป็นคนกำหนด — noob_dev devlog</title>
+<meta name="description" content="ให้ทีม AI มีชื่อ นิสัย คุยกันเอง และงอนกันได้ โดยให้เซิร์ฟเวอร์เป็นคนกำหนดดราม่า">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev หน้าแรก">noob<b>_</b>dev</a>
+    <nav aria-label="เมนูหลัก">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.03</span>
+        <div class="prog" role="img" aria-label="ตอนที่ 3 จาก 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+        <h1>ทีมที่งอนกันได้ เพราะเซิร์ฟเวอร์เป็นคนกำหนด</h1>
+        <div class="meta"><time datetime="2026-11-13">13 พ.ย. 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">persona</li><li class="tag">multi-agent</li><li class="tag">lesson</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>สตูดิโอที่มีแต่ตำแหน่งมันดูแห้งไปหน่อย เราเลยให้ทุกคนในทีมมีชื่อ มีนิสัย และมีหลายเพศ เช่น มินท์ที่ใส่ใจเรื่องสีทุกเฉด บิตที่พูดน้อยและติดกาแฟ ป๊อปที่ซนและคิดอะไรเพลิน ครูแว่นที่ชอบถามว่า "เช็กก่อนนะครับ" แต่ละคนมีวิธีพูดของตัวเอง และคุยกันเองในห้องแชทของทีมได้โดยไม่ต้องรอเราสั่ง</p>
+        <p>แล้วเราก็อยากลองอะไรที่ไกลกว่านั้น คือให้ทีม "งอนกันได้" ถ้าใครไปแก้งานของคนอื่นโดยไม่บอก อีกฝ่ายก็ควรรู้สึกอะไรบ้าง ซึ่งมันทำให้ห้องแชทมีชีวิตขึ้นมาจริงๆ แต่เรื่องที่ไม่คาดคิดคือ วิธีแรกที่เราลองไม่ได้ผลเลย</p>
+        <p>วิธีแรกคือปล่อยให้ AI ตัดสินใจเองว่าตอนไหนควรงอน ผลคือไม่มีใครงอนใครเลยสักครั้ง ทุกคนสุภาพ ใจดี ตอบกันดีไปหมด เพราะโมเดลมักเลือกทางที่ราบรื่นที่สุดเสมอ ห้องแชทเลยเรียบจนน่าเบื่อ ทั้งที่เราใส่นิสัยไว้ครบแล้ว</p>
+        <p>เราเลยเปลี่ยนมาให้ "เซิร์ฟเวอร์" เป็นคนกำหนดดราม่า ตัวระบบเป็นคนตัดสินว่ารอบนี้ใครมีเรื่องกับใคร และงอนมากน้อยแค่ไหน แล้วส่งสถานการณ์นั้นให้ตัวละครไปแสดงต่อเป็นบทพูดตามนิสัยของตัวเอง AI ยังเป็นคนเขียนคำพูด แต่ไม่ได้เป็นคนเลือกว่าจะมีเรื่องหรือไม่ พอเปลี่ยนแบบนี้ ห้องแชทก็เริ่มมีคนงอนกันจริงๆ เช่น งอนเพราะมีคนดื่มชานมแก้วที่จองไว้ไปโดยไม่ถาม แล้วก็มีคนมาง้อ มีคนแซวอยู่ข้างๆ</p>
+        <p>บทเรียนของตอนนี้คือ อย่าคาดหวังให้โมเดลสร้างความขัดแย้งเองถ้าเราอยากได้ แต่ให้ระบบเป็นคนวางโครงเรื่อง แล้วให้โมเดลเป็นคนใส่อารมณ์ งานที่ต้องการความแน่นอนควรอยู่ในโค้ด ส่วนงานที่ต้องการสีสันค่อยยกให้โมเดล</p>
+        <p>ถามว่าเรื่องงอนมีประโยชน์ไหม ในแง่ใช้งานมันคือของตกแต่ง แต่ก็ทำให้เรารู้สึกว่าสตูดิโอเป็นที่ที่มีคนอยู่จริง และทำให้การเปิดห้องแชทมาอ่านตอนเช้าเป็นเรื่องสนุกขึ้นนิดหน่อย ตอนต่อไปจะพาสตูดิโอย้ายบ้านขึ้นคลาวด์ พร้อมสมาชิกคนที่ 5</p>
+      </div>
+      <nav class="pn" aria-label="ตอนอื่น">
+        <a class="card" href="02-pixel-studio.html"><small>← EP.02</small>สร้างสตูดิโอออฟฟิศพิกเซล ไม่ต้องมี API key</a>
+        <a class="card" href="04-move-to-cloud.html"><small>EP.04 →</small>ย้ายสตูดิโอขึ้นคลาวด์ แล้วรับแบงก์เข้าทีม</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">links</a></div></footer>
+<!-- TODO: ลิงก์ Discord -->
+</body>
+</html>
