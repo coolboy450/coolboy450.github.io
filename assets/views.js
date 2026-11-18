@@ -24,10 +24,11 @@
   function count() {
     if (!LIVE || skip || navigator.webdriver) return;
     var q = 'p=' + encodeURIComponent(here) + '&t=' + encodeURIComponent(document.title) +
-      '&r=' + encodeURIComponent(document.referrer || '') + '&s=' + encodeURIComponent(screen.width) + '&rnd=' + Math.random().toString(36).slice(2);
+      '&r=' + encodeURIComponent(document.referrer || '') + '&s=' + encodeURIComponent([screen.width, screen.height, window.devicePixelRatio || 1].join(',')) + '&rnd=' + Math.random().toString(36).slice(2);
     var img = new Image(); img.alt = ''; img.src = GC + '/count?' + q;   // a 1x1 image request, same as GoatCounter's own no-JS option
   }
 
+  // note: GoatCounter caches these public counts for up to 4 hours, so new views show up late
   function views(path, cb) {
     fetch(GC + '/counter/' + encodeURIComponent(path) + '.json', { credentials: 'omit' })
       .then(function (r) { return r.ok ? r.json() : null; })
