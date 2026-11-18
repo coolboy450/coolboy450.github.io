@@ -17,8 +17,14 @@
   if (location.hash === '#count') store(false, false);
   var skip = store(true) === '1';
 
-  // one path per page: "/devlog/" and "/devlog/index.html" are the same page
-  function norm(p) { p = p.replace(/index\.html$/, ''); try { p = decodeURI(p); } catch (e) {} return p || '/'; }
+  // one path per page: "/devlog/" and "/devlog/index.html" are the same page.
+  // GoatCounter stores "/devlog" (no trailing slash), so strip it to match when reading counts.
+  function norm(p) {
+    p = p.replace(/index\.html$/, '');
+    try { p = decodeURI(p); } catch (e) {}
+    if (p.length > 1) p = p.replace(/\/+$/, '');
+    return p || '/';
+  }
   var here = norm(location.pathname);
 
   function count() {
