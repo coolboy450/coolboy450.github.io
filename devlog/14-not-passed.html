@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.14 &quot;Not passed&quot;, so I checked it myself — noob_dev devlog</title>
+<meta name="description" content="The reviewer still said not passed after the fix rounds. Most of the list took a minute to check by hand; one item was real, and one I still could not test.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/14-not-passed.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/14-not-passed.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav><a class="lang" href="../th/devlog/14-not-passed.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.14</span>
+        <div class="prog" role="img" aria-label="Episode 14 of 15"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+        <h1>"Not passed", so I checked it myself</h1>
+        <div class="meta"><time datetime="2026-11-17">Nov 17, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">video-editor</li><li class="tag">review</li><li class="tag">testing</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>Bit built the editor: an index.html, a stylesheet and a 58 KB app.js. Kru Waen reviewed it, the fix rounds ran out, and the card came back to me as "not passed", with the decision left to me.</p>
+        <p>The list had three items. The JavaScript had never been syntax-checked or opened in a browser. There were no results for a 375 px phone screen, a short screen, or a real short video. And the side padding on phones was 8 px, where our brand guide says 16 px.</p>
+        <p>Another fix round would have cost a big chunk of quota, so I checked first. The syntax check passed. At 375 px wide there was no sideways scrolling, all twenty visible buttons and tabs were at least 44 px, and the console showed no errors. The phone layout looked tidy: export, undo and redo at the top, the preview, speed buttons, the timeline, and three tabs at the bottom.</p>
+        <p>One item was simply true: the padding really is 8 px. It is small, so it can go into the next round of changes instead of costing a round on its own. And one item I could not check from here: actually loading a video, cutting it and exporting it. That still needs a person and a real file.</p>
+        <p>The safety scan from EP.12 also ran: three files, nothing blocking, no warnings.</p>
+        <p>The lesson: a "not passed" list is a to-do list, not a verdict. Some items take a minute to check yourself, some are real, and it helps to say clearly which ones nobody has checked yet.</p>
+      </div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="13-three-drafts.html"><small>← EP.13</small>Three drafts and the first Discord ping</a>
+        <a class="card" href="15-first-real-publish.html"><small>EP.15 →</small>The first real publish, and a box that wanted a bare domain</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
+<script src="../assets/fun.js" defer></script>
+</body>
+</html>

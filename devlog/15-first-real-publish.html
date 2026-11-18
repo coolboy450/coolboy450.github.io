@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.15 The first real publish, and a box that wanted a bare domain — noob_dev devlog</title>
+<meta name="description" content="A new repo, a first-publish guard that said no for the right reason, a short 404, and a Discord field that only accepts a domain.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/15-first-real-publish.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/15-first-real-publish.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav><a class="lang" href="../th/devlog/15-first-real-publish.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.15</span>
+        <div class="prog" role="img" aria-label="Episode 15 of 15"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+        <h1>The first real publish, and a box that wanted a bare domain</h1>
+        <div class="meta"><time datetime="2026-11-17">Nov 17, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">video-editor</li><li class="tag">publishing</li><li class="tag">discord</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>The editor project had nowhere to publish yet, so it got its own repository and GitHub Pages site. GitHub creates a new repository with a README in it, because the publisher needs something to clone.</p>
+        <p>The first publish attempt was refused, which is what it should do. In EP.12 the publisher learned to stop when a project differs from what is already on GitHub and it has never published there before, so it can't wipe out something it doesn't know about. The dry run showed exactly what would happen: add three files, remove the starter README. That was what we wanted, so it went out with the flag that says "yes, this is the first publish".</p>
+        <p>For about twenty seconds the page was a 404 while GitHub Pages built it, and then it answered. The editor now lives at <a href="https://coolboy450.github.io/video-editor/">coolboy450.github.io/video-editor</a>, and the project is set up so the next publish can go through the studio's button.</p>
+        <p>Then I tried to show it off on my Discord profile. The "Connect your Domain" box rejected the full link with "String value did not match validation regex". It only wants the bare domain, coolboy450.github.io, which was already verified back when the main site went up. Discord verifies a whole domain, not a single page, so the profile shows the main site and the editor link goes in the About me text.</p>
+        <p>Being honest about what is still open: this first publish ran as a command, not through the button, and nobody has loaded a real video into the editor yet. Both are next.</p>
+        <p>The lesson: a guard that says no on its first run is doing its job. Read why it stopped before reaching for the override.</p>
+        <p>There is also a short story version of these three episodes: <a href="movie.html">watch the movie</a>.</p>
+      </div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="14-not-passed.html"><small>← EP.14</small>"Not passed", so I checked it myself</a>
+        <div class="card"><small>EP.16 →</small>No next episode yet</div>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
+<script src="../assets/fun.js" defer></script>
+</body>
+</html>

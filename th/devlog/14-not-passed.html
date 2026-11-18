@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.14 &quot;ยังไม่ผ่าน&quot; เลยตรวจเองซะเลย — noob_dev devlog</title>
+<meta name="description" content="ผู้ตรวจยังบอกว่าไม่ผ่านหลังแก้ครบรอบ รายการส่วนใหญ่ตรวจเองได้ในนาทีเดียว มีข้อหนึ่งที่จริง และอีกข้อที่ยังตรวจไม่ได้">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/14-not-passed.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/14-not-passed.html">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev หน้าแรก">noob<b>_</b>dev</a>
+    <nav aria-label="เมนูหลัก">
+      <a href="../index.html">หน้าแรก</a><a href="../projects/">ผลงาน</a><a href="./" aria-current="page">บันทึก</a><a href="../team.html">ทีม</a><a href="../hire.html">รับงาน</a>
+    </nav><a class="lang" href="../../devlog/14-not-passed.html" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.14</span>
+        <div class="prog" role="img" aria-label="ตอนที่ 14 จาก 15"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+        <h1>"ยังไม่ผ่าน" เลยตรวจเองซะเลย</h1>
+        <div class="meta"><time datetime="2026-11-17">17 พ.ย. 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">แอปตัดต่อ</li><li class="tag">ตรวจงาน</li><li class="tag">ทดสอบ</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>บิตสร้างแอปตัดต่อเสร็จ ได้ index.html สไตล์ชีต และ app.js ขนาด 58 KB ครูแว่นตรวจ รอบแก้หมด และการ์ดกลับมาหาผมว่า "ยังไม่ผ่าน" ให้ผมเป็นคนตัดสิน</p>
+        <p>รายการมีสามข้อ JavaScript ยังไม่เคยตรวจ syntax และยังไม่เคยเปิดในเบราว์เซอร์ ยังไม่มีผลทดสอบที่จอมือถือ 375 px จอเตี้ย และวิดีโอสั้นของจริง และขอบข้างบนมือถือเป็น 8 px ทั้งที่คู่มือแบรนด์กำหนด 16 px</p>
+        <p>แก้อีกรอบต้องใช้โควตาก้อนใหญ่ ผมเลยตรวจเองก่อน syntax ผ่าน ที่ความกว้าง 375 px ไม่มี scroll แนวนอน ปุ่มและแท็บที่เห็นทั้งยี่สิบตัวใหญ่อย่างน้อย 44 px และ console ไม่มี error หน้ามือถือดูเรียบร้อย ปุ่มส่งออก Undo Redo อยู่ด้านบน ตามด้วยพรีวิว ปุ่มความเร็ว ไทม์ไลน์ และแท็บสามช่องด้านล่าง</p>
+        <p>มีข้อหนึ่งที่จริงตามนั้น ขอบเป็น 8 px จริง แต่เป็นเรื่องเล็ก ใส่รวมในรอบแก้ครั้งหน้าได้ ไม่ต้องเสียรอบแยก และมีข้อหนึ่งที่ผมตรวจจากตรงนี้ไม่ได้ คือโหลดวิดีโอจริง ตัด แล้วส่งออก ข้อนั้นยังต้องใช้คนกับไฟล์จริง</p>
+        <p>ตัวสแกนความปลอดภัยจาก EP.12 ก็รันด้วย สามไฟล์ ไม่มีอะไรบล็อก ไม่มีคำเตือน</p>
+        <p>บทเรียน: รายการ "ยังไม่ผ่าน" คือรายการสิ่งที่ต้องทำ ไม่ใช่คำตัดสิน บางข้อตรวจเองได้ในนาทีเดียว บางข้อจริง และควรบอกให้ชัดว่าข้อไหนยังไม่มีใครตรวจ</p>
+      </div>
+      <nav class="pn" aria-label="ตอนอื่น">
+        <a class="card" href="13-three-drafts.html"><small>← EP.13</small>แบบร่างสามแบบ กับข้อความ Discord ครั้งแรก</a>
+        <a class="card" href="15-first-real-publish.html"><small>EP.15 →</small>เผยแพร่จริงครั้งแรก กับช่องที่ต้องการแค่โดเมน</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">ลิงก์รวม</a></div></footer>
+<!-- TODO: ลิงก์ Discord -->
+<script src="../../assets/fun.js" defer></script>
+</body>
+</html>
