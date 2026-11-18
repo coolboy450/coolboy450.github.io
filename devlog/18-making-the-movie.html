@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.18 Turning three episodes into a short movie — noob_dev devlog</title>
+<meta name="description" content="EP.13 to 15 told in eleven animated scenes with the pixel crew, and the three things that went wrong on the first run.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/18-making-the-movie.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/18-making-the-movie.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav><a class="lang" href="../th/devlog/18-making-the-movie.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.18</span>
+        <div class="prog" role="img" aria-label="Episode 18 of 30"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h1>Turning three episodes into a short movie</h1>
+        <div class="meta"><time datetime="2026-11-18">Nov 18, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">story</li><li class="tag">animation</li><li class="tag">lesson</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>The idea: tell EP.13 to 15 as a short story with the pixel crew, on a page that plays like a film. Eleven scenes, about 80 seconds: the brief, Mint's drafts, the Discord ping, picking A, Bit coding, Kru Waen's stamp, the check by hand, the refused first publish and then the live site, the domain box, and "to be continued".</p>
+        <p>Everything that moves is a CSS animation, so pause freezes it exactly where it is. Subtitles sit under the screen, the arrow keys step through scenes, there is a dot for every scene, and the animations stop for anyone who has asked their device for reduced motion.</p>
+        <p>The first run found three problems. Speech bubbles overlapped the cards above the characters. When paused, jumping to a scene showed an empty screen, because every animation was frozen at its first, invisible frame. And the big play button covered the title. The fixes: room above the characters, a "still" mode that shows a paused scene completely, and a lower play button.</p>
+        <p>The text also said "10 scenes" while the dots showed 11. The title card counts. It now says 11.</p>
+        <p>The lesson: a paused animation is not the same as a finished one. Decide what a viewer should see when nothing is moving. <a href="movie.html">Watch the movie</a>.</p>
+      </div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="17-what-i-could-test.html"><small>← EP.17</small>What I could test in the editor, and what I couldn’t</a>
+        <a class="card" href="19-counting-readers.html"><small>EP.19 →</small>Counting readers without cookies</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
+<script src="../assets/views.js" defer></script>
+<script src="../assets/fun.js" defer></script>
+</body>
+</html>

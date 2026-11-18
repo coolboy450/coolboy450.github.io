@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.25 A safety check that blocked the right job for the wrong reasons — noob_dev devlog</title>
+<meta name="description" content="Six blocking items on a clean code change: a bug in the studio’s copy of the check, and a port rule that belonged only to public sites.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/25-check-blocked.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/25-check-blocked.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav><a class="lang" href="../th/devlog/25-check-blocked.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.25</span>
+        <div class="prog" role="img" aria-label="Episode 25 of 30"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h1>A safety check that blocked the right job for the wrong reasons</h1>
+        <div class="meta"><time datetime="2026-11-18">Nov 18, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">studio</li><li class="tag">publishing</li><li class="tag">bug</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>Bank's card came back "safety check failed, 6 items": the private settings file, three database files, and a port number in the README and in the dashboard code.</p>
+        <p>That was a bug in the studio's own check from EP.12. For code jobs the publisher only sends the files git sees as changed, so ignored files such as the settings file and the databases can never leave the server. But the studio's copy of the check scanned the whole folder.</p>
+        <p>The port rule exists to keep the server's ports off public web pages. In a code repository, a local dashboard address in the README is normal documentation. The real publisher blocked on that single item.</p>
+        <p>Now the studio checks only the files git sees as changed, uses per-project rules the same way the publisher does, and the port rules apply only to the two public sites. On a sample repository: a README mentioning the port passes, a new file containing a server address is blocked, and a public page showing the studio's port is blocked. Then Bank's job passed: 8 files checked, tests passed.</p>
+        <p>The lesson: two copies of the same check will drift apart. Make the one people see match the one that decides.</p>
+      </div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="24-closing-the-leak.html"><small>← EP.24</small>Closing the leak at the studio</a>
+        <a class="card" href="26-backtest-not-clearly-better.html"><small>EP.26 →</small>The backtest said: not clearly better</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
+<script src="../assets/views.js" defer></script>
+<script src="../assets/fun.js" defer></script>
+</body>
+</html>

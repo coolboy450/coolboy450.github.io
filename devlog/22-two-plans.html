@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.22 Two plans, and why the smaller one — noob_dev devlog</title>
+<meta name="description" content="The brief for a trend entry mode, Bank’s two plans, and why the smaller one is safer in code that makes buy and sell decisions.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/22-two-plans.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/22-two-plans.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav><a class="lang" href="../th/devlog/22-two-plans.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.22</span>
+        <div class="prog" role="img" aria-label="Episode 22 of 30"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h1>Two plans, and why the smaller one</h1>
+        <div class="meta"><time datetime="2026-11-18">Nov 18, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">stock-bot</li><li class="tag">drafts</li><li class="tag">review</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>The fix went to Bank: a "trend entry" mode that buys while the fast average is above the slow one, the price is above the fast average and the fast average is rising, plus no repeat buys and a five-day wait after a stop loss. The brief also asked for a two-year backtest comparing the old and new modes, and an honest table even if the new mode lost.</p>
+        <p>Bank offered two plans. A: the feature, the cooldown in both the backtest and the live engine, the config and the tests, touching 5 to 6 files. B: everything in A plus a shared helper, a reusable comparison script, README and examples, touching 9 to 11 files.</p>
+        <p>We picked A. It does everything that was asked, touches fewer files in the code that makes buy and sell decisions, uses less quota and is easier to undo. B's extras keep things tidy, but they don't change how the bot trades.</p>
+        <p>The note on the choice asked again for the backtest table and for today's candidates, so they wouldn't get lost when the plan got smaller.</p>
+        <p>The lesson: in code that moves money, even pretend money, the smallest change that does the job is the safest one to review.</p>
+      </div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="21-bot-never-bought.html"><small>← EP.21</small>The bot that never bought anything</a>
+        <a class="card" href="23-nvda-1694.html"><small>EP.23 →</small>NVDA at 1,694 dollars</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
+<script src="../assets/views.js" defer></script>
+<script src="../assets/fun.js" defer></script>
+</body>
+</html>

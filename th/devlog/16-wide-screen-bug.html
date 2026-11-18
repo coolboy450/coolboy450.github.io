@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.16 บนมือถือดี แต่จอใหญ่พัง — noob_dev devlog</title>
+<meta name="description" content="แอปตัดต่อขึ้นเว็บแล้วดูผิดบน PC เป็นความผิดพลาด CSS เล็กๆ สองจุด แก้สามบรรทัด พร้อมแก้ขอบมือถือที่ค้างจาก EP.14">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/16-wide-screen-bug.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/16-wide-screen-bug.html">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev หน้าแรก">noob<b>_</b>dev</a>
+    <nav aria-label="เมนูหลัก">
+      <a href="../index.html">หน้าแรก</a><a href="../projects/">ผลงาน</a><a href="./" aria-current="page">บันทึก</a><a href="../team.html">ทีม</a><a href="../hire.html">รับงาน</a>
+    </nav><a class="lang" href="../../devlog/16-wide-screen-bug.html" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.16</span>
+        <div class="prog" role="img" aria-label="ตอนที่ 16 จาก 30"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h1>บนมือถือดี แต่จอใหญ่พัง</h1>
+        <div class="meta"><time datetime="2026-11-18">18 พ.ย. 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">แอปตัดต่อ</li><li class="tag">css</li><li class="tag">บทเรียน</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>พอแอปตัดต่อขึ้นเว็บ ผมเปิดบน PC แล้วหน้าตาผิด ไม่มีคลังไฟล์ ไม่มีแผงปรับค่า ไทม์ไลน์ไปเบียดอยู่มุมหนึ่ง และแถบแท็บของมือถือโผล่บนจอคอม</p>
+        <p>สาเหตุคือ CSS ผิดเล็กๆ สองจุด แผงคลังไฟล์ แผงปรับค่า และไทม์ไลน์ ถูกสั่งให้อยู่ในช่องชื่อ "panel" ซึ่งมีแค่ในเลย์เอาต์มือถือ พอเป็นจอใหญ่ไม่มีช่องนี้ เบราว์เซอร์เลยกองมันลงแถวเพิ่ม อีกจุดคือกฎที่ซ่อนแท็บมือถือบนจอใหญ่ ถูกกฎอีกตัวที่อยู่ข้างล่างทับ เพราะน้ำหนักเท่ากัน ตัวที่มาทีหลังชนะ</p>
+        <p>แก้สามบรรทัด ให้แต่ละแผงมีช่องของตัวเองบนจอใหญ่ และทำให้กฎซ่อนแท็บเจาะจงขึ้น ระหว่างนั้นเปลี่ยนขอบข้างบนมือถือจาก 8 เป็น 16 px ด้วย เป็นข้อเดียวที่ค้างจากการตรวจใน EP.14</p>
+        <p>วัดหลังแก้ที่ความกว้าง 1440 px คลังอยู่ซ้าย พรีวิวกลาง ปรับค่าขวา ไทม์ไลน์เต็มแถวล่าง ไม่มีแถบแท็บ ไม่มี scroll แนวนอน บนมือถือ 375 px แสดงทีละแผง แท็บอยู่ล่าง ขอบ 16 px</p>
+        <p>บทเรียน: ใน EP.14 เราตรวจหน้ามือถือละเอียดมาก แต่ไม่ได้เปิดจอใหญ่เลย ตรวจทุกขนาดจอที่หน้าเว็บบอกว่ารองรับ ไม่ใช่แค่ขนาดที่ถูกถามถึง</p>
+      </div>
+      <nav class="pn" aria-label="ตอนอื่น">
+        <a class="card" href="15-first-real-publish.html"><small>← EP.15</small>เผยแพร่จริงครั้งแรก กับช่องที่ต้องการแค่โดเมน</a>
+        <a class="card" href="17-what-i-could-test.html"><small>EP.17 →</small>ส่วนที่ตรวจได้ในแอปตัดต่อ และส่วนที่ตรวจไม่ได้</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">ลิงก์รวม</a></div></footer>
+<!-- TODO: ลิงก์ Discord -->
+<script src="../../assets/views.js" defer></script>
+<script src="../../assets/fun.js" defer></script>
+</body>
+</html>

@@ -71,6 +71,7 @@
   }
 
   count();
-  // give the count a moment to land, so the number shown includes this visit
-  setTimeout(show, LIVE && !skip ? 700 : 0);
+  // Only the real site reads counts (GoatCounter refuses other origins, which would just fill the console).
+  // Give the count a moment to land, so the number shown includes this visit.
+  if (LIVE) setTimeout(show, skip ? 0 : 700);
 })();

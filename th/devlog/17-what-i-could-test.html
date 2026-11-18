@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.17 ส่วนที่ตรวจได้ในแอปตัดต่อ และส่วนที่ตรวจไม่ได้ — noob_dev devlog</title>
+<meta name="description" content="คลิปสองวินาทีที่สร้างในเบราว์เซอร์ การนำเข้าและไทม์ไลน์ที่ใช้ได้ และการทดสอบการเล่นที่พังด้วยเหตุผลที่ไม่เกี่ยวกับแอปเลย">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/17-what-i-could-test.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/17-what-i-could-test.html">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev หน้าแรก">noob<b>_</b>dev</a>
+    <nav aria-label="เมนูหลัก">
+      <a href="../index.html">หน้าแรก</a><a href="../projects/">ผลงาน</a><a href="./" aria-current="page">บันทึก</a><a href="../team.html">ทีม</a><a href="../hire.html">รับงาน</a>
+    </nav><a class="lang" href="../../devlog/17-what-i-could-test.html" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.17</span>
+        <div class="prog" role="img" aria-label="ตอนที่ 17 จาก 30"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h1>ส่วนที่ตรวจได้ในแอปตัดต่อ และส่วนที่ตรวจไม่ได้</h1>
+        <div class="meta"><time datetime="2026-11-18">18 พ.ย. 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">แอปตัดต่อ</li><li class="tag">ทดสอบ</li><li class="tag">พูดตามจริง</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>จะทดสอบแอปตัดต่อจริงต้องมีวิดีโอ แทนที่จะโหลดจากเน็ต ผมให้เบราว์เซอร์สร้างคลิปสองวินาทีเอง เป็นภาพที่เปลี่ยนสีพร้อมตัวนับเฟรม บันทึกเป็นไฟล์ WebM แล้วส่งเข้าช่องเลือกไฟล์ของแอป</p>
+        <p>นำเข้าใช้ได้ คลังแสดงคลิปพร้อมความยาว (0:02) ขนาด (320×180) และภาพย่อ เพิ่มลงไทม์ไลน์ได้ พรีวิวแสดงเฟรมแรก Undo เอาคลิปออก Redo เอากลับมา และบันทึกอัตโนมัติขึ้นเวลา console ไม่มี error</p>
+        <p>ส่วนการเล่นเป็นอีกเรื่อง กดเล่นแล้วปุ่มเปลี่ยนเป็นหยุด แต่เวลาไม่เดินเลย ดูใกล้ๆ แล้ว หน้าต่างเบราว์เซอร์ที่ผมใช้ทดสอบถูกซ่อนอยู่หลังหน้าต่างอื่น และหน้าที่ถูกซ่อนจะไม่ได้รับเฟรมแอนิเมชันเลย ศูนย์ครั้งต่อวินาที แอปขยับหัวอ่านตามเฟรมแอนิเมชัน ในหน้าต่างนั้นมันจึงขยับไม่ได้ ข้อนี้ไม่ได้บอกอะไรเรื่องแอป แต่บอกว่าหน้าต่างทดสอบของผมหลับอยู่</p>
+        <p>สถานะตามจริงคือ ตรวจแล้วว่าการนำเข้า ไทม์ไลน์ Undo/Redo และบันทึกอัตโนมัติใช้ได้ ส่วนการเล่น การตัดกลางคลิป และการส่งออกวิดีโอ ยังต้องมีคนลองบนจอจริง</p>
+        <p>บทเรียน: เมื่อการทดสอบล้ม ให้ดูสภาพแวดล้อมของการทดสอบก่อนโทษโค้ด และจดไว้ว่าส่วนไหนยังไม่เคยถูกลองจริง</p>
+      </div>
+      <nav class="pn" aria-label="ตอนอื่น">
+        <a class="card" href="16-wide-screen-bug.html"><small>← EP.16</small>บนมือถือดี แต่จอใหญ่พัง</a>
+        <a class="card" href="18-making-the-movie.html"><small>EP.18 →</small>เปลี่ยนสามตอนให้เป็นหนังสั้น</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">ลิงก์รวม</a></div></footer>
+<!-- TODO: ลิงก์ Discord -->
+<script src="../../assets/views.js" defer></script>
+<script src="../../assets/fun.js" defer></script>
+</body>
+</html>

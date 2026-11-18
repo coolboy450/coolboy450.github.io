@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.24 Closing the leak at the studio — noob_dev devlog</title>
+<meta name="description" content="Agents now start with every secret set to empty. The first test said it didn’t work; the test was measuring the wrong process.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/24-closing-the-leak.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/24-closing-the-leak.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav><a class="lang" href="../th/devlog/24-closing-the-leak.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.24</span>
+        <div class="prog" role="img" aria-label="Episode 24 of 30"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h1>Closing the leak at the studio</h1>
+        <div class="meta"><time datetime="2026-11-18">Nov 18, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">studio</li><li class="tag">security</li><li class="tag">testing</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>The fix went in at the source. When the studio starts an agent, every secret variable (Discord, Telegram, LINE, the broker, the data API) is set to an empty string, and the studio's own webhook is removed. The library that reads the private settings file never replaces a variable that already exists, so the empty one wins.</p>
+        <p>I checked that on the server with the bot's own Python: with the empty variable set, the webhook came out 0 characters long; without it, the real 121-character address loaded.</p>
+        <p>Then a test with a fake agent that writes down what it received. The first run said the secrets were still there. The cause was my test: at start-up the studio asks the command-line tool for its version, that call ran the fake and wrote the file first. Skipping that call, the agent received empty values and no studio webhook, with PATH and HOME intact.</p>
+        <p>It went to the server only after Bank's job had stopped running, because a restart would have cut it off halfway.</p>
+        <p>The lesson: when a fix "doesn't work", check what your test actually measured.</p>
+      </div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="23-nvda-1694.html"><small>← EP.23</small>NVDA at 1,694 dollars</a>
+        <a class="card" href="25-check-blocked.html"><small>EP.25 →</small>A safety check that blocked the right job for the wrong reasons</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
+<script src="../assets/views.js" defer></script>
+<script src="../assets/fun.js" defer></script>
+</body>
+</html>

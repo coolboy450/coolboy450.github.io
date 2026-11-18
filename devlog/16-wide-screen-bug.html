@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.16 Fine on a phone, broken on a wide screen — noob_dev devlog</title>
+<meta name="description" content="The editor went live and looked wrong on a PC: two small CSS mistakes, a three-line fix, and the phone padding from EP.14.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/16-wide-screen-bug.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/16-wide-screen-bug.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav><a class="lang" href="../th/devlog/16-wide-screen-bug.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.16</span>
+        <div class="prog" role="img" aria-label="Episode 16 of 30"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h1>Fine on a phone, broken on a wide screen</h1>
+        <div class="meta"><time datetime="2026-11-18">Nov 18, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">video-editor</li><li class="tag">css</li><li class="tag">lesson</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>After the editor went live, I opened it on my PC and it looked wrong: no media library, no settings panel, the timeline squeezed into a corner, and the phone tab bar sitting on a desktop screen.</p>
+        <p>It came down to two small CSS mistakes. The library, the settings and the timeline were all told to live in a grid area called "panel", an area that only exists in the phone layout. On a wide screen there was no such area, so the browser piled them into extra rows. And the rule that hides the phone tabs on wide screens was overruled by a later rule that showed them: both had the same weight, and the later one wins.</p>
+        <p>The fix was three lines: give each pane its own area on wide screens, and make the hiding rule more specific. While I was there, the phone side padding went from 8 to 16 px, the one item still open from the review in EP.14.</p>
+        <p>Measured afterwards at 1440 px wide: library on the left, preview in the middle, settings on the right, the timeline across the bottom, no tab bar and no sideways scroll. On a 375 px phone: one pane at a time, tabs at the bottom, 16 px padding.</p>
+        <p>The lesson: in EP.14 we checked the phone layout carefully and never opened the wide one. Check every screen size the page claims to support, not only the one that was in question.</p>
+      </div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="15-first-real-publish.html"><small>← EP.15</small>The first real publish, and a box that wanted a bare domain</a>
+        <a class="card" href="17-what-i-could-test.html"><small>EP.17 →</small>What I could test in the editor, and what I couldn’t</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
+<script src="../assets/views.js" defer></script>
+<script src="../assets/fun.js" defer></script>
+</body>
+</html>

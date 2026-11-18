@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.25 ตัวตรวจที่บล็อกงานที่ถูก ด้วยเหตุผลที่ผิด — noob_dev devlog</title>
+<meta name="description" content="หกข้อที่บล็อกงานโค้ดที่สะอาด มาจากบั๊กในตัวตรวจฝั่งสตูดิโอ และกฎพอร์ตที่ควรใช้แค่กับเว็บสาธารณะ">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/25-check-blocked.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/25-check-blocked.html">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev หน้าแรก">noob<b>_</b>dev</a>
+    <nav aria-label="เมนูหลัก">
+      <a href="../index.html">หน้าแรก</a><a href="../projects/">ผลงาน</a><a href="./" aria-current="page">บันทึก</a><a href="../team.html">ทีม</a><a href="../hire.html">รับงาน</a>
+    </nav><a class="lang" href="../../devlog/25-check-blocked.html" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.25</span>
+        <div class="prog" role="img" aria-label="ตอนที่ 25 จาก 30"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+        <h1>ตัวตรวจที่บล็อกงานที่ถูก ด้วยเหตุผลที่ผิด</h1>
+        <div class="meta"><time datetime="2026-11-18">18 พ.ย. 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">สตูดิโอ</li><li class="tag">เผยแพร่</li><li class="tag">บั๊ก</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>การ์ดของแบงก์กลับมาว่า "ตรวจความปลอดภัยไม่ผ่าน 6 ข้อ" คือไฟล์ตั้งค่าลับ ไฟล์ฐานข้อมูลสามไฟล์ และเลขพอร์ตใน README กับในโค้ด dashboard</p>
+        <p>นี่เป็นบั๊กในตัวตรวจของสตูดิโอเองตั้งแต่ EP.12 งานโค้ดจะส่งเฉพาะไฟล์ที่ git เห็นว่าเปลี่ยน ไฟล์ที่ git ไม่สนใจอย่างไฟล์ตั้งค่าลับและฐานข้อมูลจึงไม่มีวันออกจากเซิร์ฟเวอร์ได้ แต่ตัวตรวจฝั่งสตูดิโอไปสแกนทั้งโฟลเดอร์</p>
+        <p>กฎพอร์ตมีไว้กันไม่ให้พอร์ตของเซิร์ฟเวอร์ไปโผล่บนหน้าเว็บสาธารณะ ในโค้ด ที่อยู่ dashboard ในเครื่องที่เขียนใน README เป็นเอกสารปกติ ตัวเผยแพร่ตัวจริงบล็อกเพราะข้อนี้ข้อเดียว</p>
+        <p>ตอนนี้สตูดิโอตรวจเฉพาะไฟล์ที่ git เห็นว่าเปลี่ยน ใช้กฎรายโปรเจกต์แบบเดียวกับตัวเผยแพร่ และกฎพอร์ตใช้แค่กับเว็บสาธารณะสองเว็บ ลองกับ repo ตัวอย่าง README ที่พูดถึงพอร์ตผ่าน ไฟล์ใหม่ที่มีที่อยู่เซิร์ฟเวอร์ถูกบล็อก หน้าเว็บที่โชว์พอร์ตของสตูดิโอถูกบล็อก จากนั้นงานของแบงก์ก็ผ่าน ตรวจ 8 ไฟล์ เทสผ่าน</p>
+        <p>บทเรียน: ตัวตรวจเดียวกันที่มีสองชุด สักวันจะเพี้ยนออกจากกัน ทำให้ชุดที่คนเห็นตรงกับชุดที่ตัดสินจริง</p>
+      </div>
+      <nav class="pn" aria-label="ตอนอื่น">
+        <a class="card" href="24-closing-the-leak.html"><small>← EP.24</small>อุดรอยรั่วที่สตูดิโอ</a>
+        <a class="card" href="26-backtest-not-clearly-better.html"><small>EP.26 →</small>backtest บอกว่า: ไม่ได้ดีกว่าชัดเจน</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">ลิงก์รวม</a></div></footer>
+<!-- TODO: ลิงก์ Discord -->
+<script src="../../assets/views.js" defer></script>
+<script src="../../assets/fun.js" defer></script>
+</body>
+</html>

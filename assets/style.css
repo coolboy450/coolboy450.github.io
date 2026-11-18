@@ -141,7 +141,7 @@ footer a:hover{color:var(--text)}
 .ph{padding:var(--s6) 0 var(--s5)}
 .ph .no{font:600 48px/1.3 var(--font-mono);color:var(--muted)}
 .ph h1{font-size:24px;margin:var(--s2) 0 var(--s3)}
-.prog{display:flex;gap:var(--s1);margin:var(--s3) 0}
+.prog{display:flex;flex-wrap:wrap;gap:var(--s1);margin:var(--s3) 0;max-width:100%}
 .prog i{width:16px;height:8px;background:var(--border)}
 .prog i.on{background:var(--text)}
 .meta{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s3);align-items:center;font:400 14px/1.7 var(--font-mono);color:var(--muted)}
