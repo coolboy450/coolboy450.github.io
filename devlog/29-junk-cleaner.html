@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.29 Junk Cleaner: a cleaner that asks before it deletes — noob_dev devlog</title>
+<meta name="description" content="A Thai Windows app that clears junk, scans through Microsoft Defender and tidies Android phones. Its self-test found 3.19 GB and deleted nothing.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/29-junk-cleaner.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/29-junk-cleaner.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav><a class="lang" href="../th/devlog/29-junk-cleaner.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.29</span>
+        <div class="prog" role="img" aria-label="Episode 29 of 30"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+        <h1>Junk Cleaner: a cleaner that asks before it deletes</h1>
+        <div class="meta"><time datetime="2026-11-20">Nov 20, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">other-projects</li><li class="tag">windows</li><li class="tag">safety</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>Junk Cleaner (November) is a Thai-language Windows app with three jobs: clear junk files on drive C:, scan for viruses through Microsoft Defender, and clean up junk on an Android phone over USB.</p>
+        <p>The rules matter more than the features. Nothing is deleted until you tick it and confirm. Files in use are skipped, links and junctions are never followed, and temporary files newer than 24 hours are kept. Browser cleaning touches only the cache folders, never passwords, cookies or history. Anything that needs administrator rights asks at the moment of deleting, not when the app opens.</p>
+        <p>It has a self-test that does everything except delete. Its run on the build machine found about 3.19 GB: 1.69 GB of npm cache, 1.04 GB of Chrome cache, 0.37 GB of Edge cache, 85 MB of temporary files and 9 MB in the recycle bin. 629 temporary files were kept because they were less than a day old. It also found that Defender was switched off because two other antivirus programs were running, so the app said so and disabled its scan button instead of pretending to scan. The app has no virus engine of its own; it only drives Defender.</p>
+        <p>On the phone side, it asks before downloading Google's platform tools, always lists the junk first, and only removes app caches, thumbnails, old installer and log files in Download, and empty folders. It never deletes photos, videos or documents. iPhones aren't supported.</p>
+        <p>Building it had its own lesson: the installer tool failed on long paths, so it builds in a short folder, and its caches live on another drive because C: had only about 19 GB free. The lesson: a cleaning tool's most important feature is what it refuses to delete.</p>
+      </div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="28-two-football-projects.html"><small>← EP.28</small>Two football projects from before the studio</a>
+        <a class="card" href="30-quicknote-whiteboard.html"><small>EP.30 →</small>QuickNote Whiteboard, the one that gets used every day</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
+<script src="../assets/views.js" defer></script>
+<script src="../assets/fun.js" defer></script>
+</body>
+</html>

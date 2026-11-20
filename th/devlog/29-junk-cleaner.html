@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.29 Junk Cleaner: ตัวล้างขยะที่ถามก่อนลบ — noob_dev devlog</title>
+<meta name="description" content="แอป Windows ภาษาไทยที่ล้างขยะ สแกนผ่าน Microsoft Defender และเก็บกวาดมือถือ Android ทดสอบตัวเองเจอขยะ 3.19 GB โดยไม่ลบอะไรเลย">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/29-junk-cleaner.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/29-junk-cleaner.html">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev หน้าแรก">noob<b>_</b>dev</a>
+    <nav aria-label="เมนูหลัก">
+      <a href="../index.html">หน้าแรก</a><a href="../projects/">ผลงาน</a><a href="./" aria-current="page">บันทึก</a><a href="../team.html">ทีม</a><a href="../hire.html">รับงาน</a>
+    </nav><a class="lang" href="../../devlog/29-junk-cleaner.html" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.29</span>
+        <div class="prog" role="img" aria-label="ตอนที่ 29 จาก 30"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+        <h1>Junk Cleaner: ตัวล้างขยะที่ถามก่อนลบ</h1>
+        <div class="meta"><time datetime="2026-11-20">20 พ.ย. 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">โปรเจกต์อื่น</li><li class="tag">windows</li><li class="tag">ความปลอดภัย</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>Junk Cleaner (พฤศจิกายน) เป็นแอป Windows ภาษาไทยที่มีสามงาน ล้างไฟล์ขยะบนไดรฟ์ C: สแกนไวรัสผ่าน Microsoft Defender และล้างขยะในมือถือ Android ผ่านสาย USB</p>
+        <p>กติกาสำคัญกว่าฟีเจอร์ ไม่มีอะไรถูกลบจนกว่าจะติ๊กเลือกและกดยืนยัน ข้ามไฟล์ที่กำลังใช้ ไม่ตามลิงก์หรือ junction และไฟล์ชั่วคราวที่ใหม่กว่า 24 ชั่วโมงจะถูกเก็บไว้ การล้างเบราว์เซอร์แตะแค่โฟลเดอร์แคช ไม่แตะรหัสผ่าน คุกกี้ หรือประวัติ อะไรที่ต้องใช้สิทธิ์ผู้ดูแลจะขอตอนกดลบ ไม่ใช่ตอนเปิดแอป</p>
+        <p>มันมีโหมดทดสอบตัวเองที่ทำทุกอย่างยกเว้นการลบ รันบนเครื่องที่ใช้ build เจอขยะราว 3.19 GB เป็นแคช npm 1.69 GB แคช Chrome 1.04 GB แคช Edge 0.37 GB ไฟล์ชั่วคราว 85 MB และถังขยะ 9 MB มีไฟล์ชั่วคราว 629 ไฟล์ที่ถูกเก็บไว้เพราะอายุไม่ถึงวัน และยังเจอว่า Defender ถูกปิด เพราะมีโปรแกรมแอนตี้ไวรัสอีกสองตัวทำงานอยู่ แอปจึงบอกตรงๆ และปิดปุ่มสแกน แทนที่จะแกล้งทำเป็นสแกน ตัวแอปไม่มีระบบตรวจไวรัสของตัวเอง มันแค่สั่ง Defender</p>
+        <p>ฝั่งมือถือ แอปถามก่อนดาวน์โหลดเครื่องมือ platform-tools ของ Google แสดงรายการขยะก่อนเสมอ และลบเฉพาะแคชแอป ภาพย่อ ไฟล์ติดตั้งกับไฟล์ log เก่าในโฟลเดอร์ Download และโฟลเดอร์ว่าง ไม่ลบรูป วิดีโอ หรือเอกสารเลย ไม่รองรับ iPhone</p>
+        <p>ตอน build ก็มีบทเรียนของมัน ตัวสร้างไฟล์ติดตั้งพังกับ path ยาวๆ จึงต้อง build ในโฟลเดอร์ที่ชื่อสั้น และเก็บแคชไว้อีกไดรฟ์ เพราะ C: เหลือว่างแค่ราว 19 GB บทเรียน: ฟีเจอร์ที่สำคัญที่สุดของตัวล้างขยะ คือสิ่งที่มันไม่ยอมลบ</p>
+      </div>
+      <nav class="pn" aria-label="ตอนอื่น">
+        <a class="card" href="28-two-football-projects.html"><small>← EP.28</small>โปรเจกต์ฟุตบอลสองตัว ก่อนจะมีสตูดิโอ</a>
+        <a class="card" href="30-quicknote-whiteboard.html"><small>EP.30 →</small>QuickNote Whiteboard ตัวที่ถูกใช้ทุกวัน</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">ลิงก์รวม</a></div></footer>
+<!-- TODO: ลิงก์ Discord -->
+<script src="../../assets/views.js" defer></script>
+<script src="../../assets/fun.js" defer></script>
+</body>
+</html>

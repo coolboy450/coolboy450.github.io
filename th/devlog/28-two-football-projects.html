@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.28 โปรเจกต์ฟุตบอลสองตัว ก่อนจะมีสตูดิโอ — noob_dev devlog</title>
+<meta name="description" content="ต้นแบบแดชบอร์ดพรีเมียร์ลีกที่เล่นได้เฉพาะสตรีมที่มีสิทธิ์ และเกมฟุตบอลบน Roblox ในสคริปต์สองไฟล์">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/28-two-football-projects.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/28-two-football-projects.html">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev หน้าแรก">noob<b>_</b>dev</a>
+    <nav aria-label="เมนูหลัก">
+      <a href="../index.html">หน้าแรก</a><a href="../projects/">ผลงาน</a><a href="./" aria-current="page">บันทึก</a><a href="../team.html">ทีม</a><a href="../hire.html">รับงาน</a>
+    </nav><a class="lang" href="../../devlog/28-two-football-projects.html" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.28</span>
+        <div class="prog" role="img" aria-label="ตอนที่ 28 จาก 30"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+        <h1>โปรเจกต์ฟุตบอลสองตัว ก่อนจะมีสตูดิโอ</h1>
+        <div class="meta"><time datetime="2026-11-20">20 พ.ย. 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">โปรเจกต์อื่น</li><li class="tag">เว็บไซต์</li><li class="tag">roblox</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>ก่อนจะมีสตูดิโอหรือทีม AI ก็มีโปรเจกต์ข้างๆ อยู่แล้ว สองตัวเป็นเรื่องฟุตบอล</p>
+        <p>ตัวแรกคือ Premier Live (กันยายน) ต้นแบบแดชบอร์ดพรีเมียร์ลีก มีสกอร์ ตารางคะแนน ทีม ข่าว ค้นหา รายการโปรด การแจ้งเตือน และธีมมืด/สว่าง ทุกอย่างที่เห็นเป็นข้อมูลจำลอง และหน้าเว็บบอกไว้ชัดทั้งแถบด้านบนและท้ายหน้า ข้อมูลทั้งหมดผ่านชั้นเล็กๆ ชั้นเดียว ถ้าจะเปลี่ยนไปใช้ API ข้อมูลฟุตบอลจริงก็แค่แก้ค่าตั้ง พร้อมหมายเหตุว่า API key ต้องอยู่หลังเซิร์ฟเวอร์ ไม่ใช่ฝังในหน้าเว็บ</p>
+        <p>ส่วนที่ผมภูมิใจที่สุดคือตัวเล่นวิดีโอ ค่าเริ่มต้นจะเล่นแมตช์จำลองที่วาดบน canvas พร้อมเสียงบรรยากาศสังเคราะห์ มันเล่น HLS MP4 หรือ embed ได้ด้วย แต่ในค่าตั้งเขียนไว้ตรงๆ ว่าต้องเป็นสตรีมที่คุณมีสิทธิ์เผยแพร่เท่านั้น และหน้าเว็บลิงก์ไปที่ช่องทางการสำหรับดูจริง เว็บดูบอลที่แอบฝังสตรีมเถื่อนสร้างง่าย แต่ตัวนี้ถูกสร้างมาให้ไม่ต้องใช้มันเลย</p>
+        <p>ตัวที่สองคือเกมฟุตบอลบน Roblox (ตุลาคม) สคริปต์สองไฟล์ ราว 1,950 บรรทัด สคริปต์ฝั่งเซิร์ฟเวอร์สร้างสนาม ประตู บอล และล็อบบี้ แล้วจัดการทีม ตำแหน่ง ชุด การยิง จ่าย จ่ายลอย สไลด์ ผู้รักษาประตูพุ่งรับ สกิล สแตมินา สกอร์ และเวลาแข่งห้านาที สคริปต์ฝั่งผู้เล่นวาดปุ่มควบคุมกับหน้าจอข้อมูล ติดตั้งด้วยการวางสคริปต์สองไฟล์ใน Roblox Studio และทดสอบสองทีมด้วยผู้เล่นสองคนในเครื่องได้</p>
+        <p>บทเรียน: ตัดสินใจให้เร็วว่าเส้นที่ซื่อตรงอยู่ตรงไหน (ข้อมูลจำลอง สตรีมที่มีสิทธิ์) แล้วใส่มันไว้ในตัวงาน ไม่ใช่แค่ในหัว</p>
+      </div>
+      <nav class="pn" aria-label="ตอนอื่น">
+        <a class="card" href="27-shipping-to-a-running-bot.html"><small>← EP.27</small>ส่งการแก้ให้บอทที่กำลังรันอยู่</a>
+        <a class="card" href="29-junk-cleaner.html"><small>EP.29 →</small>Junk Cleaner: ตัวล้างขยะที่ถามก่อนลบ</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">ลิงก์รวม</a></div></footer>
+<!-- TODO: ลิงก์ Discord -->
+<script src="../../assets/views.js" defer></script>
+<script src="../../assets/fun.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.28 Two football projects from before the studio — noob_dev devlog</title>
+<meta name="description" content="A Premier League dashboard prototype that only plays streams you have the rights to, and a football game for Roblox in two scripts.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/28-two-football-projects.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/28-two-football-projects.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a>
+    </nav><a class="lang" href="../th/devlog/28-two-football-projects.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.28</span>
+        <div class="prog" role="img" aria-label="Episode 28 of 30"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+        <h1>Two football projects from before the studio</h1>
+        <div class="meta"><time datetime="2026-11-20">Nov 20, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">other-projects</li><li class="tag">website</li><li class="tag">roblox</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>Before there was a studio or an AI team, there were side projects. Two of them are about football.</p>
+        <p>The first is Premier Live (September): a Premier League dashboard prototype with scores, tables, teams, news, search, favourites, notifications and a dark and light theme. Everything you see is demo data, and the page says so in a bar across the top and again in the footer. All data goes through one small layer, so switching to a real football data API later is a configuration change, with a note that the API key belongs behind a server, not inside the web page.</p>
+        <p>The player is the part I'm most glad about. By default it plays a simulated match drawn on a canvas with synthetic crowd sound. It can also play HLS, MP4 or an embed, but the settings say in plain words that it must be a stream you have the rights to publish, and the page links to the official place to watch. A football site that quietly embeds pirated streams is easy to build; this one was built to never need one.</p>
+        <p>The second is a football game for Roblox (October), two scripts and about 1,950 lines. The server script builds the pitch, goals, ball and lobby, then handles teams, positions and kits, shooting, passing, lofted passes, slide tackles, goalkeeper dives, skills, stamina, the score and a five-minute clock. The client script draws the controls and the HUD. To install it you paste two scripts into Roblox Studio, and you can test two teams with two local players.</p>
+        <p>The lesson: decide early where the honest line is (demo data, streams you have rights to) and put it in the product itself, not only in your head.</p>
+      </div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="27-shipping-to-a-running-bot.html"><small>← EP.27</small>Shipping a change to a bot that is already running</a>
+        <a class="card" href="29-junk-cleaner.html"><small>EP.29 →</small>Junk Cleaner: a cleaner that asks before it deletes</a>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
+<script src="../assets/views.js" defer></script>
+<script src="../assets/fun.js" defer></script>
+</body>
+</html>
