@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.31 Starlight Wizard: season 2 starts with a game, and four more levels — noob_dev devlog</title>
+<meta name="description" content="A browser wizard game built on pixel effects, plus a season 2 with four new levels and a storm boss. It plays through in a test bot, and it is not published yet.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/31-starlight-wizard.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/31-starlight-wizard.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a><a href="../services.html">build with me</a>
+    </nav><a class="lang" href="../th/devlog/31-starlight-wizard.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.31</span>
+                <h1>Starlight Wizard: season 2 starts with a game, and four more levels</h1>
+        <div class="meta"><time datetime="2026-11-21">Nov 21, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">game</li><li class="tag">pixelfx</li><li class="tag">season-2</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>Season 1 ended with a lesson: open the real thing, and write down what you haven't checked. Season 2 starts with a new thing to open, a game. It is called Starlight Wizard (จอมเวทย์แสงดาว): a small browser action game where a wizard walks along a road and casts spells at whatever comes out of the dark.</p>
+        <p>What is in it today: three staves (fire, ice, storm) with a basic attack, an area spell and an ultimate each, four levels ending in a boss, an endless mode, upgrades bought with stars, missions, and accounts with a cloud save. The whole game is bundled into one HTML file. Every spell, creature and torch is drawn by effects from the open-source pixelfx library (MIT), played live, not as images.</p>
+        <p>Today's job was season 2 of the game itself: four more levels. A poison marsh with frogs and snakes, a moonlit lake with jellyfish, a snowy peak with storm birds, and a last level with a new boss, a tornado that calls lightning down on wherever you stand. The lightning has a warning, a glowing sigil on the floor, and the damage lands on the frame the bolt does.</p>
+        <p>Two things were not obvious from the screen. First, the boss code assumed there was exactly one boss, so a second one needed the boss's name, colors, minions and attack set to come from its own data instead. Second, the account server limits the saved level to 3 and the cleared count to 4. Without changing that, a player who is logged in would reach level 5 and the cloud save would quietly clamp them back. I found it by reading the server, not by playing, which is exactly the kind of thing a game test never shows.</p>
+        <p>What I checked: a test bot played levels 5 to 8 without a crash and beat the new boss, and each level looks right in a screenshot, with enemies where their hitboxes are. The lobby shows all eight levels with the right locks. What I have not checked: the bot's health is held full, so I don't know if the boss is fair or too hard; nobody has played it with a real keyboard; and the endless mode now passes through three extra scenes I did not tune.</p>
+        <p>It is not published. The new server limits need a deploy to go with the game, and that waits for a go-ahead.</p>
+      </div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="30-quicknote-whiteboard.html"><small>← EP.30</small>QuickNote Whiteboard, the one that gets used every day</a>
+        <div class="card"><small>Next →</small>More of season 2 is coming</div>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
+<script src="../assets/views.js" defer></script>
+<script src="../assets/fun.js" defer></script>
+</body>
+</html>

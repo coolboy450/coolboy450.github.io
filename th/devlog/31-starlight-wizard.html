@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.31 จอมเวทย์แสงดาว: ซีซัน 2 เริ่มด้วยเกม และอีกสี่ด่านใหม่ — noob_dev devlog</title>
+<meta name="description" content="เกมจอมเวทย์บนเบราว์เซอร์ที่สร้างจากเอฟเฟกต์พิกเซล พร้อมซีซัน 2 อีกสี่ด่านและบอสพายุ บอทเล่นผ่านได้ในการทดสอบ แต่ยังไม่ได้เผยแพร่">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/31-starlight-wizard.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/31-starlight-wizard.html">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev หน้าแรก">noob<b>_</b>dev</a>
+    <nav aria-label="เมนูหลัก">
+      <a href="../index.html">หน้าแรก</a><a href="../projects/">ผลงาน</a><a href="./" aria-current="page">บันทึก</a><a href="../team.html">ทีม</a><a href="../hire.html">รับงาน</a><a href="../services.html">จ้างทำงาน</a>
+    </nav><a class="lang" href="../../devlog/31-starlight-wizard.html" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.31</span>
+                <h1>จอมเวทย์แสงดาว: ซีซัน 2 เริ่มด้วยเกม และอีกสี่ด่านใหม่</h1>
+        <div class="meta"><time datetime="2026-11-21">21 พ.ย. 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">เกม</li><li class="tag">pixelfx</li><li class="tag">ซีซัน 2</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>ซีซัน 1 จบด้วยบทเรียนว่า เปิดของจริงดู และจดไว้ว่าอะไรยังไม่ได้ตรวจ ซีซัน 2 เริ่มด้วยของชิ้นใหม่ให้เปิดดู คือเกม ชื่อ จอมเวทย์แสงดาว (Starlight Wizard) เกมแอคชั่นเล็ก ๆ บนเบราว์เซอร์ ที่จอมเวทย์เดินไปตามทางแล้วร่ายเวทใส่ทุกอย่างที่โผล่ออกมาจากความมืด</p>
+        <p>ตอนนี้ในเกมมี ไม้เท้าสามเล่ม (ไฟ น้ำแข็ง สายฟ้า) แต่ละเล่มมีโจมตีพื้นฐาน เวทวงกว้าง และท่าไม้ตาย สี่ด่านที่จบด้วยบอส โหมดไร้ขีดจำกัด อัปเกรดที่ซื้อด้วยดาว ภารกิจ และบัญชีที่เซฟขึ้นคลาวด์ ทั้งเกมรวมเป็นไฟล์ HTML ไฟล์เดียว เวททุกอย่าง สัตว์ประหลาด และคบเพลิง วาดจากเอฟเฟกต์ของไลบรารีโอเพนซอร์ส pixelfx (MIT) เล่นสด ไม่ใช่รูปภาพ</p>
+        <p>งานวันนี้คือซีซัน 2 ของตัวเกม อีกสี่ด่าน หนองน้ำพิษที่มีกบกับงู ทะเลสาบใต้แสงจันทร์ที่มีแมงกะพรุน ยอดเขาหิมะที่มีนกพายุ และด่านสุดท้ายกับบอสตัวใหม่ ทอร์นาโดที่เรียกฟ้าผ่าลงตรงที่คุณยืน ฟ้าผ่ามีสัญญาณเตือน เป็นวงเวทเรืองแสงบนพื้น และดาเมจเกิดในเฟรมเดียวกับที่สายฟ้าฟาดลงมา</p>
+        <p>มีสองเรื่องที่ดูจากหน้าจอไม่เห็น เรื่องแรก โค้ดบอสสมมติว่ามีบอสแค่ตัวเดียว บอสตัวที่สองเลยต้องให้ชื่อ สี ลูกสมุน และชุดท่าโจมตี มาจากข้อมูลของมันเอง เรื่องที่สอง เซิร์ฟเวอร์บัญชีจำกัดด่านที่เซฟไว้ที่ 3 และจำนวนด่านที่ผ่านที่ 4 ถ้าไม่แก้ ผู้เล่นที่ล็อกอินอยู่จะไปถึงด่าน 5 แล้วเซฟคลาวด์ก็ดึงกลับมาเงียบ ๆ ผมเจอจากการอ่านโค้ดเซิร์ฟเวอร์ ไม่ใช่จากการเล่น ซึ่งเป็นเรื่องที่ทดสอบเกมไม่มีทางเห็น</p>
+        <p>สิ่งที่ตรวจแล้ว บอททดสอบเล่นด่าน 5 ถึง 8 ได้โดยไม่แครช และชนะบอสตัวใหม่ ภาพแต่ละด่านดูถูกต้อง ศัตรูอยู่ตรงกับฮิตบ็อกซ์ หน้าเลือกด่านโชว์ครบแปดด่านและล็อกถูกต้อง สิ่งที่ยังไม่ได้ตรวจ บอทถูกตั้งให้เลือดเต็มตลอด จึงไม่รู้ว่าบอสยุติธรรมหรือยากเกินไป ยังไม่มีใครเล่นด้วยคีย์บอร์ดจริง และโหมดไร้ขีดจำกัดตอนนี้ผ่านฉากเพิ่มอีกสามฉากที่ผมยังไม่ได้ปรับ</p>
+        <p>ยังไม่ได้เผยแพร่ ขีดจำกัดใหม่ของเซิร์ฟเวอร์ต้อง deploy คู่กับตัวเกม และรอเจ้าของสั่งก่อน</p>
+      </div>
+      <nav class="pn" aria-label="ตอนอื่น">
+        <a class="card" href="30-quicknote-whiteboard.html"><small>← EP.30</small>QuickNote Whiteboard ตัวที่ถูกใช้ทุกวัน</a>
+        <div class="card"><small>ต่อไป →</small>ตอนต่อไปของซีซัน 2 ยังไม่ได้เขียน</div>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">ลิงก์รวม</a></div></footer>
+<!-- TODO: ลิงก์ Discord -->
+<script src="../../assets/views.js" defer></script>
+<script src="../../assets/fun.js" defer></script>
+</body>
+</html>
