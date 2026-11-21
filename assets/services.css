@@ -1,0 +1,53 @@
+/* Services page — uses the site's own tokens (style.css). Calm white, one accent. */
+.sv-hero{display:grid;gap:var(--s4);padding:var(--s6) 0 var(--s5)}
+.sv-hero h1{font-size:34px;line-height:1.2}
+.sv-hero h1 span{color:var(--muted);font-weight:400}
+.sv-hero .lead{color:var(--muted);max-width:640px;font-size:18px}
+.sv-hero .cta{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center}
+.sv-note{font:400 13px/1.6 var(--font-mono);color:var(--muted)}
+.sv-sec{margin-top:var(--s7)}
+.sv-sec>h2{font-size:24px;margin-bottom:var(--s1)}
+.sv-sec>p.sub{color:var(--muted);margin-bottom:var(--s4);max-width:680px}
+.sv-grid{display:grid;gap:var(--s4)}
+.sv-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:var(--s5);display:grid;gap:var(--s2);align-content:start}
+.sv-card h3{font-size:18px}
+.sv-card p{color:var(--muted);font-size:15px}
+.sv-card .ex{font:400 13px/1.6 var(--font-mono);color:var(--text)}
+.sv-card .tag{justify-self:start}
+.sv-steps{list-style:none;padding:0;display:grid;gap:var(--s3);counter-reset:s}
+.sv-steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:var(--s3);align-items:start;padding:var(--s3) 0;border-top:1px solid var(--border)}
+.sv-steps li::before{content:counter(s);display:grid;place-items:center;width:32px;height:32px;border-radius:var(--r-pill);background:var(--text);color:var(--bg);font:600 14px/1 var(--font-mono)}
+.sv-steps b{display:block}
+.sv-steps span{color:var(--muted);font-size:15px}
+.sv-two{display:grid;gap:var(--s4)}
+.sv-list{list-style:none;padding:0;display:grid;gap:var(--s2)}
+.sv-list li{display:grid;grid-template-columns:22px 1fr;gap:var(--s2);font-size:15px}
+.sv-list.no li::before{content:"✕";color:var(--error)}
+.sv-list.yes li::before{content:"✓";color:var(--accent)}
+.sv-proof a{display:flex;justify-content:space-between;gap:var(--s3);min-height:44px;align-items:center;border-top:1px solid var(--border);color:var(--text);text-decoration:none;font-size:15px}
+.sv-proof a:hover{text-decoration:underline;text-underline-offset:4px}
+.sv-proof a span{color:var(--muted);font:400 13px/1.6 var(--font-mono)}
+
+/* brief builder */
+.brief{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:var(--s5);display:grid;gap:var(--s4)}
+.brief .fld{display:grid;gap:var(--s1)}
+.brief label,.brief legend{font-weight:500}
+.brief small{color:var(--muted);font-weight:400}
+.brief input[type=text],.brief textarea,.brief select{width:100%;min-height:48px;border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--s2) var(--s3);background:var(--bg);color:var(--text);font:400 16px/1.6 var(--font-th)}
+.brief textarea{min-height:96px;resize:vertical}
+.brief input:focus,.brief textarea:focus,.brief select:focus{outline:2px solid var(--accent);outline-offset:1px}
+.brief fieldset{border:0;padding:0;display:grid;gap:var(--s2)}
+.chips{display:flex;flex-wrap:wrap;gap:var(--s2)}
+.chips label{display:inline-flex;align-items:center;gap:var(--s2);min-height:44px;padding:0 var(--s3);border:1px solid var(--border);border-radius:var(--r-pill);background:var(--bg);cursor:pointer;font-weight:400}
+.chips input{width:18px;height:18px;accent-color:var(--accent)}
+.chips label:has(input:checked){border-color:var(--accent);background:rgb(77 124 15 / .08)}
+.out{background:var(--bg);border:1px dashed var(--border);border-radius:var(--r-md);padding:var(--s4);white-space:pre-wrap;font:400 14px/1.7 var(--font-mono);min-height:120px}
+.acts{display:flex;flex-wrap:wrap;gap:var(--s3)}
+.acts .btn{border:0;cursor:pointer}
+.acts .btn.s{border:1px solid var(--border);background:var(--bg)}
+.ok{color:var(--accent);font-size:14px;min-height:1.7em}
+.faq details{border-top:1px solid var(--border);padding:var(--s3) 0}
+.faq summary{cursor:pointer;font-weight:500;min-height:44px;display:flex;align-items:center}
+.faq p{color:var(--muted);font-size:15px;margin-top:var(--s2);max-width:680px}
+@media (min-width:640px){.sv-grid.two{grid-template-columns:1fr 1fr}.sv-two{grid-template-columns:1fr 1fr}.sv-hero h1{font-size:44px}}
+@media (min-width:900px){.sv-grid.four{grid-template-columns:repeat(2,1fr)}}
