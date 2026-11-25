@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EP.31 Starlight Wizard: season 2 starts with a game, and four more levels — noob_dev devlog</title>
-<meta name="description" content="A browser wizard game built on pixel effects, plus a season 2 with four new levels and a storm boss. It plays through in a test bot, and it is not published yet.">
+<meta name="description" content="A browser wizard game built on pixel effects, plus a season 2 with four new levels and a storm boss. It plays through in a test bot.">
 <meta name="color-scheme" content="dark light">
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,7 +37,7 @@
         <p>Today's job was season 2 of the game itself: four more levels. A poison marsh with frogs and snakes, a moonlit lake with jellyfish, a snowy peak with storm birds, and a last level with a new boss, a tornado that calls lightning down on wherever you stand. The lightning has a warning, a glowing sigil on the floor, and the damage lands on the frame the bolt does.</p>
         <p>Two things were not obvious from the screen. First, the boss code assumed there was exactly one boss, so a second one needed the boss's name, colors, minions and attack set to come from its own data instead. Second, the account server limits the saved level to 3 and the cleared count to 4. Without changing that, a player who is logged in would reach level 5 and the cloud save would quietly clamp them back. I found it by reading the server, not by playing, which is exactly the kind of thing a game test never shows.</p>
         <p>What I checked: a test bot played levels 5 to 8 without a crash and beat the new boss, and each level looks right in a screenshot, with enemies where their hitboxes are. The lobby shows all eight levels with the right locks. What I have not checked: the bot's health is held full, so I don't know if the boss is fair or too hard; nobody has played it with a real keyboard; and the endless mode now passes through three extra scenes I did not tune.</p>
-        <p>It is not published. The new server limits need a deploy to go with the game, and that waits for a go-ahead.</p>
+        <p>Update, Nov 25: it is published now, with the server limit raised in the same deploy. You can play it at <a href="https://starlight-wizard.vercel.app/" rel="noopener">starlight-wizard.vercel.app</a>. I checked that the live page carries the new boss and that the account API still answers; I have not logged in and saved a level 5+ run on the live site yet.</p>
       </div>
       <nav class="pn" aria-label="More episodes">
         <a class="card" href="30-quicknote-whiteboard.html"><small>← EP.30</small>QuickNote Whiteboard, the one that gets used every day</a>
