@@ -202,3 +202,25 @@ footer a:hover{color:var(--text)}
 .lang:hover{border-color:var(--accent)}
 .lang-row{text-align:center;margin-top:var(--s4)}
 @media (prefers-reduced-motion:reduce){.lang{transition:none}}
+
+/* ===== polish pass: header on phones, states, browser surfaces ===== */
+/* phones: the language button sits beside the logo instead of on a third row of its own */
+@media (max-width:899px){
+  .site .logo{order:1}
+  .site .lang{order:2;margin-left:auto}
+  .site nav{order:3;flex:1 0 100%}
+}
+@media (max-width:639px){.site nav{border-radius:var(--r-lg)}}
+/* a link that is underlined keeps the line clear of the letters (Thai tone marks included) */
+a{text-underline-offset:.22em;text-decoration-thickness:1px}
+.btn{transition:background-color var(--ease),border-color var(--ease),transform var(--ease)}
+.btn.p:hover{background:#3F6A0C}
+.btn:active{transform:translateY(1px)}
+.card a:focus-visible,.ep:focus-visible,.room:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r-md)}
+/* the parts the browser draws */
+::selection{background:#DDEFC2;color:var(--text)}
+:root{caret-color:var(--accent);accent-color:var(--accent);scrollbar-color:#B9BEC6 var(--bg)}
+.meta,.ep time,.ep .no,.ph .no,.pn small,footer,.meta *{font-variant-numeric:tabular-nums}
+h1,h2,h3{text-wrap:balance}
+.prose p,.lead,.ds,.room p{text-wrap:pretty}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:active{transform:none}}
