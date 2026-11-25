@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.32 ตัววัดแบตหูฟัง และเมาส์ที่อ่านไม่ได้ — noob_dev devlog</title>
+<meta name="description" content="แอปถาดระบบ Windows ตัวเล็กที่โชว์แบตบลูทูธและเตือนที่ 40 เปอร์เซ็นต์ อ่านหูฟังได้ถูกต้อง และอ่านเมาส์ไม่ได้เลย">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/32-bluetooth-battery-tray.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/32-bluetooth-battery-tray.html">
+</head>
+<body>
+<a class="skip" href="#main">ข้ามไปเนื้อหา</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev หน้าแรก">noob<b>_</b>dev</a>
+    <nav aria-label="เมนูหลัก">
+      <a href="../index.html">หน้าแรก</a><a href="../projects/">ผลงาน</a><a href="./" aria-current="page">บันทึก</a><a href="../team.html">ทีม</a><a href="../hire.html">รับงาน</a><a href="../services.html">จ้างทำงาน</a>
+    </nav><a class="lang" href="../../devlog/32-bluetooth-battery-tray.html" lang="en" hreflang="en" aria-label="Switch to English">EN</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.32</span>
+                <h1>ตัววัดแบตหูฟัง และเมาส์ที่อ่านไม่ได้</h1>
+        <div class="meta"><time datetime="2026-11-25">25 พ.ย. 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">windows</li><li class="tag">บลูทูธ</li><li class="tag">ซีซัน 2</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>เรื่องนี้เริ่มจากภาพหน้าจอ ผมตีกรอบมุมแถบงานแล้วถามว่า ถ้าถาดระบบโชว์แบตของหูฟังกับเมาส์ได้ล่ะ เรื่องเล็กๆ แต่แบตหมดกลางเกมหรือกลางสายเป็นเรื่องที่น่ารำคาญจริง</p>
+        <p>ก่อนจะสร้างอะไร ผมเช็กก่อนว่าเครื่องตัวเองบอกอะไรได้บ้าง Windows เก็บเปอร์เซ็นต์แบตของอุปกรณ์บลูทูธที่รายงานแบตไว้แล้ว เป็นตัวเลขเดียวกับหน้า Settings อ่านได้โดยไม่ต้องใช้ไดรเวอร์หรือสิทธิ์แอดมิน บนเครื่องผมมีอุปกรณ์เดียวที่มีค่า คือหูฟังสำหรับนอน 100% อุปกรณ์ที่จับคู่ไว้อีกสี่ตัวไม่มีค่า และหน้า Settings อธิบายเหตุผลได้ คือยังไม่ได้เชื่อมต่อ ส่วนเมาส์ไม่มีค่าเลย เพราะไม่ใช่บลูทูธ ใช้ตัวรับ USB 2.4 GHz และแบตของตัวรับแบบนั้นเป็นเรื่องของแต่ละยี่ห้อ ผมเลยกำหนดให้แอปบอกตรงๆ ว่า "ไม่ได้เชื่อมต่อ" กับ "ไม่รายงานแบต" เป็นคนละคำตอบ และไม่มีอันไหนที่เป็น 0%</p>
+        <p>เวอร์ชันแรกผิดแบบที่ผมจับได้จากการอ่านผลลัพธ์เท่านั้น มันรายงาน 100% ข้างชื่อ "Microsoft Bluetooth Enumerator" ไม่ใช่หูฟัง ค่าแบตอยู่บนโหนดบริการ และผมสมมติว่าโหนดแม่ของมันคืออุปกรณ์ ซึ่งไม่จริง โหนดของหูฟังเป็นพี่น้องกัน วิธีแก้คือจับคู่ด้วยที่อยู่ 12 หลักของอุปกรณ์เอง ตอนนี้มันแสดงหูฟัง 100% เหมือน Settings และอีกสี่ตัวเป็นไม่ได้เชื่อมต่อ</p>
+        <p>แอปเป็นไฟล์ C# ไฟล์เดียว ไม่ต้องลง SDK build ด้วยคอมไพเลอร์ที่มากับ Windows อยู่แล้ว โชว์แบตต่ำสุดเป็นตัวเลขบนไทล์สีเขียว ส้ม หรือแดง เตือนครั้งเดียวเมื่ออุปกรณ์เหลือ 40% หรือต่ำกว่า และเตือนใหม่หลังชาร์จเกิน 45% เปิดตอนเริ่ม Windows ก็ต่อเมื่อคุณติ๊กเอง เป็นโอเพนซอร์สบน GitHub: <a href="https://github.com/coolboy450/bt-battery-tray" rel="noopener">coolboy450/bt-battery-tray</a> และการ build บน GitHub ผ่านแล้ว</p>
+        <p>สิ่งที่ตรวจแล้ว ตัวเลขตรงกับ Settings บนอุปกรณ์จริงหนึ่งตัว แอปรันต่อเนื่องได้ เปิดซ้ำแล้วตัวที่สองปิดเอง และ build ผ่านบนเครื่อง Windows ที่สะอาด สิ่งที่ยังไม่ได้ตรวจ ผมยังไม่ได้ดูไอคอนในถาดระบบบนหน้าจอจริง เลข "100" สามหลักอาจเล็กเกินไปที่ 16 พิกเซล ยังไม่เคยเห็นการแจ้งเตือนแบตต่ำขึ้นมา และอุปกรณ์ Bluetooth LE มีรองรับในโค้ดแต่ไม่เคยรันกับของจริง ส่วนเมาส์ อย่างที่บอก อ่านไม่ได้ และผมจะไม่เดาโปรโตคอลของยี่ห้อนั้น</p>
+      </div>
+      <nav class="pn" aria-label="ตอนอื่น">
+        <a class="card" href="31-starlight-wizard.html"><small>← EP.31</small>จอมเวทย์แสงดาว: ซีซัน 2 เริ่มด้วยเกม และอีกสี่ด่านใหม่</a>
+        <div class="card"><small>ต่อไป →</small>ตอนต่อไปยังไม่ได้เขียน</div>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">ลิงก์รวม</a></div></footer>
+<!-- TODO: ลิงก์ Discord -->
+<script src="../../assets/views.js" defer></script>
+<script src="../../assets/fun.js" defer></script>
+</body>
+</html>

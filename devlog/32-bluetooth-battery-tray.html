@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EP.32 A battery meter for the headset, and the mouse that cannot be read — noob_dev devlog</title>
+<meta name="description" content="A small Windows tray app that shows Bluetooth battery and warns at 40 percent. It read the headset correctly, and could not read the mouse at all.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Thai:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="alternate" hreflang="en" href="https://coolboy450.github.io/devlog/32-bluetooth-battery-tray.html">
+<link rel="alternate" hreflang="th" href="https://coolboy450.github.io/th/devlog/32-bluetooth-battery-tray.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../index.html" aria-label="noob_dev home">noob<b>_</b>dev</a>
+    <nav aria-label="Main menu">
+      <a href="../index.html">home</a><a href="../projects/">projects</a><a href="./" aria-current="page">devlog</a><a href="../team.html">team</a><a href="../hire.html">hire me</a><a href="../services.html">build with me</a>
+    </nav><a class="lang" href="../th/devlog/32-bluetooth-battery-tray.html" lang="th" hreflang="th" aria-label="สลับเป็นภาษาไทย">ไทย</a>
+  </header>
+
+  <main id="main">
+    <article class="article">
+      <div class="ph">
+        <span class="no">EP.32</span>
+                <h1>A battery meter for the headset, and the mouse that cannot be read</h1>
+        <div class="meta"><time datetime="2026-11-25">Nov 25, 2026</time><span aria-hidden="true">·</span><ul class="tags"><li class="tag">windows</li><li class="tag">bluetooth</li><li class="tag">season-2</li></ul></div>
+      </div>
+      <div class="prose">
+        <p>This one started from a screenshot. I had boxed the corner of the taskbar and asked: what if the tray showed the battery of my headphones and my mouse? A small thing, but a dead battery in the middle of a game or a call is a real annoyance.</p>
+        <p>Before building anything I checked what my own PC could actually tell me. Windows keeps a battery percentage for Bluetooth devices that report one, the same number Settings shows. Reading it takes no driver and no admin rights. On my machine exactly one device had a reading, a sleep headset at 100%. Four other paired devices showed nothing, and Settings explained why: they were not connected. And the mouse showed nothing at all, because it is not Bluetooth. It runs on a 2.4 GHz USB dongle, and a dongle's battery is each brand's own business. I told the app it should say so honestly: "not connected" and "no battery reported" are different answers, and neither is 0%.</p>
+        <p>The first version got it wrong in a way I only caught by reading the output. It reported 100% next to the name "Microsoft Bluetooth Enumerator", not the headset. The battery lives on a service node, and I had assumed that node's parent was the device. It is not; the headset's nodes are siblings. The fix was to match them by the device's own 12-digit address. It now lists the headset at 100%, the same as Settings, and the other four as not connected.</p>
+        <p>The app is one C# file with no SDK needed: it is built by the compiler that already ships with Windows. It shows the lowest battery as a number on a green, amber or red tile, warns once when a device drops to 40% or below, re-arms after it charges past 45%, and starts with Windows only if you tick that yourself. It is open source on GitHub: <a href="https://github.com/coolboy450/bt-battery-tray" rel="noopener">coolboy450/bt-battery-tray</a>, and GitHub's own build of it passes.</p>
+        <p>What I checked: the number matches Settings on one real device, the app stays running, a second copy closes itself, and the build works on a clean Windows machine. What I have not checked: I have not yet looked at the icon in the tray on a real screen, where a three-digit "100" may be too small at 16 pixels; I have not seen the low-battery warning appear; and Bluetooth LE devices are supported in the code but never run against real hardware. The mouse, as said, cannot be read, and I am not going to guess a vendor protocol for it.</p>
+      </div>
+      <nav class="pn" aria-label="More episodes">
+        <a class="card" href="31-starlight-wizard.html"><small>← EP.31</small>Starlight Wizard: season 2 starts with a game, and four more levels</a>
+        <div class="card"><small>Next →</small>The next episode is not written yet</div>
+      </nav>
+    </article>
+  </main>
+</div>
+<footer><div class="wrap"><a href="https://github.com/coolboy450" rel="noopener">github.com/coolboy450</a><a href="../links.html">All links</a></div></footer>
+<!-- TODO: add the Discord invite link when the owner provides one -->
+<script src="../assets/views.js" defer></script>
+<script src="../assets/fun.js" defer></script>
+</body>
+</html>
